@@ -1,8 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 :root {
-  --font-family: "Poppins", sans-serif; 
+  --bs-primary: #063233;
+  --light-color: #02b7ce;
+  --orange-color: #f24822;
+  --font-family: "Poppins", sans-serif;
+  --bg-image: url("./assets/images/bg-image.png");
 }
 
 body {
   font-family: var(--font-family) !important;
+  background-image: var(--bg-image);
+}
+
+.btn-lg {
+  width: 300px;
+  height: 80px;
+  color: var(--bs-primary) !important;
+  background-color: white;
 }

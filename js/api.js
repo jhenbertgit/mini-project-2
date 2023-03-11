@@ -71,4 +71,4 @@ const getMunicipalities = async () => {
 
 // getProvince();
 // getCities();
-getMunicipalities();
+// getMunicipalities();
