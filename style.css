@@ -1,6 +1,4 @@
 /* COVER HEADER*/
-
-
 .nav-masthead .nav-link {
     color: rgba(255, 255, 255, .5);
     border-bottom: .25rem solid transparent;
@@ -25,7 +23,7 @@
     max-width: 42em;
 }
 
-body {
+.bg-body {
     background-image: url('bg.png');
     background-repeat: no-repeat;
     background-attachment: fixed;

@@ -10,13 +10,14 @@ import {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
-  authDomain: process.env.AUTH_DOMAIN,
-  databaseURL: process.env.DB_URL,
-  projectId: process.env.PROJECT_ID,
-  storageBucket: process.env.STORAGE_BUCKET,
-  messagingSenderId: process.env.MSG_SENDER_ID,
-  appId: process.env.APP_ID,
+  apiKey: "AIzaSyD-PltqGp2GBwBmx4gs0gxye6ezOy3_YCA",
+  authDomain: "login-auth-37058.firebaseapp.com",
+  databaseURL:
+    "https://login-auth-37058-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "login-auth-37058",
+  storageBucket: "login-auth-37058.appspot.com",
+  messagingSenderId: "672654908775",
+  appId: "1:672654908775:web:b2d1ea31a45f01f73863c2",
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -25,12 +26,11 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 const username = document.getElementById("username");
-const email = document.getElementById("emailReg");
-const password = document.getElementById("passwordReg");
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
-const contactNumber = document.getElementById("contactNumber");
-const address = document.getElementById("address");
+const email = document.getElementById("emailReg");
+const password = document.getElementById("passwordReg");
+
 const login = document.getElementById("login");
 const register = document.getElementById("register");
 
@@ -52,20 +52,13 @@ function validation() {
     isEmpty(email.value) ||
     isEmpty(password.value) ||
     isEmpty(firstName.value) ||
-    isEmpty(lastName.value) ||
-    isEmpty(address.value) ||
-    isEmpty(contactNumber.value)
+    isEmpty(lastName.value)
   ) {
     alert("All fields must not be empty");
     return false;
   }
 
-  if (!nameregex.test(firstName.value)) {
-    alert("Name must contains alphabet only");
-    return false;
-  }
-
-  if (!nameregex.test(lastName.value)) {
+  if (!nameregex.test(firstName.value) && !nameregex.test(lastName.value)) {
     alert("Name must contains alphabet only");
     return false;
   }
@@ -98,8 +91,6 @@ function registerUser() {
           password: encryptPass(),
           firstName: firstName.value,
           lastName: lastName.value,
-          contactNumber: contactNumber.value,
-          address: address.value,
         })
           .then(() => {
             alert("Registered Sucessfully");
@@ -158,14 +149,14 @@ function decryptPass(dbpass) {
 }
 
 function loggedIn(user) {
-  let keepLoogedIn = document.getElementById("keepLoginSwitch").checked;
+  let keepLoogedIn = document.getElementById("rememberMe").checked;
 
   if (!keepLoogedIn) {
     sessionStorage.setItem("user", JSON.stringify(user));
-    window.location = "homepage.html";
+    window.location = "user-page.html";
   } else {
     localStorage.setItem("keepLoggedIn", "yes");
     localStorage.setItem("user", JSON.stringify(user));
-    window.location = "homepage.html";
+    window.location = "user-page.html";
   }
 }

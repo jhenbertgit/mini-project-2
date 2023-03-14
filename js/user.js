@@ -17,7 +17,7 @@ function signOut() {
   sessionStorage.removeItem("user");
   localStorage.removeItem("user");
   localStorage.removeItem("keepLoggedIn");
-  window.location = "homepage.html";
+  window.location = "user-page.html";
 }
 
 window.onload = function () {
@@ -34,7 +34,7 @@ window.onload = function () {
     signoutLink.href = "index.html";
   } else {
     userLink.innerText = currentUser.username;
-    header.innerText = `Welcome, ${currentUser.firstName} ${currentUser.lastName}`;
+    header.innerText = `Welcome, ${currentUser.firstName}`;
     userLink.classList.replace("nav-link", "btn");
     userLink.classList.remove("btn-success");
     userLink.href = "#";

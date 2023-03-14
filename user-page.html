@@ -12,8 +12,46 @@
   </head>
   <body>
     <main>
+      <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid px-5">
+            <a class="navbar-brand" href="index.html"
+              >Bluecare Virtual Medical Clinic</a
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse d-flex justify-content-end"
+              id="navbarSupportedContent"
+            >
+              <form class="d-flex">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item mx-1">
+                    <a id="user-link" href="" class="nav-link">Username</a>
+                  </li>
+                  <li class="nav-item mx-1">
+                    <a id="signout-link" href="" class="nav-link">Sign Out</a>
+                  </li>
+                </ul>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+
       <div class="container">
-        <div class="row"></div>
+        <div class="row">
+          <h1 id="header-text" class="fw-bold text-center"></h1>
+        </div>
       </div>
     </main>
     <footer>
@@ -21,7 +59,7 @@
     </footer>
 
     <!--custom js-->
-    <script src="main.js"></script>
+    <script src="./js/user.js"></script>
     <!--BS js-->
     <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>
