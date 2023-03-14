@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blucare Virtual Medical Clinic</title>
+    <link rel="icon" type="image/x-icon" href="2.png">
 
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +30,7 @@
             <a class="nav-link fw-bold p-1" href="#">Toolkits</a>
             <a class="nav-link fw-bold p-1" href="#">Security</a>
             <button type="button" class="btn btn-primary fw-bold px-2  py-1 mx-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Sign-up
+                Log-in
             </button>
         </div>
         </header>
@@ -40,24 +41,54 @@
                 <div class="col-9 mb-4">
                     <p class="display-1 mb-2 fw-semibold">Virtual Clinic</p>
                     <p class="lead">
-                        <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white mx-1">Doctor</a>
-                        <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white mx-1">Patient</a>
+                      <button type="button" class="btn btn-primary btn-lg btn-light fw-bold border-white bg-white mx-1" data-bs-toggle="modal" data-bs-target="#doctorModal">
+                        Doctor
+                      </button>
+                      <button type="button" class="btn btn-primary btn-lg btn-light fw-bold border-white bg-white m-1 " data-bs-toggle="modal" data-bs-target="#patientModal">
+                        Patient
+                      </button>
                     </p>
                 </div>
             </div>
         </main>
 
 
-        <!-- MODAL -->
+        <!-- LOG-IN MODAL -->
         <div class="modal fade" tabindex="-1" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content rounded-4 shadow">
               <div class="modal-header p-5 pb-4 border-bottom-0" style="color:black">
                 <!-- <h1 class="modal-title fs-5" >Modal title</h1> -->
-                <h1 class="fw-bold mb-0 fs-2">Sign up for free</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-        
+              
+              <div class="form-signin modal-body p-5 pt-0 w-100 m-auto">
+                <form>
+                  <img class="mb-4 img-fluid" src="2.png" alt="" width="75" height="75">
+                  <!-- <h1 class="fw-bold mb-3 fs-2 text-black">Log-in</h1> -->
+                  <h1 class="h3 mb-3 fw-bold text-black">Please sign in</h1>
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                  <div class="checkbox mb-3">
+                    <label>
+                      <input type="checkbox" value="remember-me" class="me-1"><span class="text-black">Remember me</span> 
+                    </label>
+                  </div>
+                  <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                  <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
+                </form>
+              </div>
+
+
+
+
+
               <div class="modal-body p-5 pt-0">
                 <form class="">
                   <div class="form-floating mb-3">
@@ -68,10 +99,10 @@
                     <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
                     <label for="floatingPassword">Password</label>
                   </div>
-                  <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign up</button>
-                  <small class="text-secondary">Already have an account? Click</small>
-                  <small class="text-primary">Sign-in</small>
-                  <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+                  <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Log-in</button>
+                  <small class="text-secondary">No account yet? Click</small>
+                  <small class="text-primary">Sign-up</small>
+                  <small class="text-muted">By clicking Log-in, you agree to the terms of use.</small>
 
                 
 
@@ -95,6 +126,109 @@
             </div>
           </div>
         </div>
+
+
+
+        <!-- DOCTOR SIGN-UP MODAL -->
+        <div class="modal fade" tabindex="-1" id="doctorModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content rounded-4 shadow">
+              <div class="modal-header p-5 pb-4 border-bottom-0" style="color:black">
+                <!-- <h1 class="modal-title fs-5" >Modal title</h1> -->
+                <h1 class="fw-bold mb-0 fs-2">Sign-up as a Doctor</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+        
+              <div class="modal-body p-5 pt-0">
+                <form class="">
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                  <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Log-in</button>
+                  <small class="text-secondary">Already have an account? Click</small>
+                  <small class="text-primary">Log-in</small>
+                  <small class="text-muted">By clicking Sign-up, you agree to the terms of use.</small>
+
+
+                
+
+                  <hr class="my-4">
+
+                  <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
+                  <button class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3" type="submit">
+                    <svg class="bi me-1" width="16" height="16"><use xlink:href="#twitter"></use></svg>
+                    Sign up with Twitter
+                  </button>
+                  <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" type="submit">
+                    <svg class="bi me-1" width="16" height="16"><use xlink:href="#facebook"></use></svg>
+                    Sign up with Facebook
+                  </button>
+                  <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
+                    <svg class="bi me-1" width="16" height="16"><use xlink:href="#github"></use></svg>
+                    Sign up with GitHub
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- PATIENT SIGN-UP MODAL -->
+        <div class="modal fade" tabindex="-1" id="patientModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content rounded-4 shadow">
+              <div class="modal-header p-5 pb-4 border-bottom-0" style="color:black">
+                <!-- <h1 class="modal-title fs-5" >Modal title</h1> -->
+                <h1 class="fw-bold mb-0 fs-2">Sign-up as a Patient</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+        
+              <div class="modal-body p-5 pt-0">
+                <form class="">
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                  <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Log-in</button>
+                  <small class="text-secondary">Already have an account? Click</small>
+                  <small class="text-primary">Log-in</small>
+                  <small class="text-muted">By clicking Sign-up, you agree to the terms of use.</small>
+
+                
+
+                  <hr class="my-4">
+
+                  <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
+                  <button class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3" type="submit">
+                    <svg class="bi me-1" width="16" height="16"><use xlink:href="#twitter"></use></svg>
+                    Sign up with Twitter
+                  </button>
+                  <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" type="submit">
+                    <svg class="bi me-1" width="16" height="16"><use xlink:href="#facebook"></use></svg>
+                    Sign up with Facebook
+                  </button>
+                  <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
+                    <svg class="bi me-1" width="16" height="16"><use xlink:href="#github"></use></svg>
+                    Sign up with GitHub
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
         <!-- FOOTER -->
         <footer class="mt-auto text-white-50">
         <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
