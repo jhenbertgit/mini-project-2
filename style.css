@@ -1,30 +1,9 @@
-/* COVER HEADER*/
-
-
-.nav-masthead .nav-link {
-    color: rgba(255, 255, 255, .5);
-    border-bottom: .25rem solid transparent;
-  }
-  
-  .nav-masthead .nav-link:hover,
-  .nav-masthead .nav-link:focus {
-    border-bottom-color: rgba(255, 255, 255, .25);
-  }
-  
-  .nav-masthead .nav-link + .nav-link {
-    margin-left: 1rem;
-  }
-  
-  .nav-masthead .active {
-    color: #fff;
-    border-bottom-color: #fff;
-  }
-
-  /* COVER BODY */
-.cover-container {
-    max-width: 42em;
+html,
+body {
+  height: 100vh;
 }
 
+<<<<<<< HEAD
 .cover {
     background-image: url('bg.png');
     background-repeat: no-repeat;
@@ -56,3 +35,48 @@
 .media-body {
   flex: 1;
 }
+=======
+/* COVER HEADER*/
+.nav-masthead .nav-link {
+  color: rgba(255, 255, 255, 0.5);
+  border-bottom: 0.25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+/* COVER BODY */
+.cover-container {
+  max-width: 42em;
+}
+
+/* I upadted the bg to an illustration */
+
+.bg-body {
+  background-image: url("bg2.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* background-size: cover; */
+  background-size: 100% 100%;
+}
+
+.container-ht {
+  height: 30rem;
+}
+
+.nav-link:hover{
+  color: #fff;
+
+}
+>>>>>>> bc74b8bb4a6e9be3a76ed66366dc50089a0733fd

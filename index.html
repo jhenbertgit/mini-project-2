@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blucare Virtual Medical Clinic</title>
-    <link rel="icon" type="image/x-icon" href="2.png">
+    <link rel="icon" type="image/x-icon" href="2.png" />
 
     <!-- google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,600&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,600&display=swap"
+      rel="stylesheet"
+    />
     <!-- bootstrap css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+
     <!-- CSS -->
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -186,10 +189,57 @@
                 </button>
               </form>
             </div>
+=======
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body class="text-center text-bg-dark bg-body">
+    <header>
+      <!-- <h3 class="float-md-start mb-0">Cover</h3> -->
+      <nav class="nav nav-masthead float-md-end m-4">
+        <a class="nav-link fw-bold p-1 active" aria-current="page" href="#"
+          >Home</a
+        >
+        <a class="nav-link fw-bold p-1" href="#">About</a>
+        <a class="nav-link fw-bold p-1" href="#">Services</a>
+        <a class="nav-link fw-bold p-1" href="#">Faqs</a>
+        <a class="nav-link fw-bold p-1" href="#">Contact Us</a>
+        <button
+          type="button"
+          class="btn btn-primary fw-bold px-2 py-1 mx-3"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Log-in
+        </button>
+      </nav>
+    </header>
+    <div class="container d-flex p-3 mx-auto flex-column container-ht">
+      <div class="row">
+        <div class="col-9 mb-4">
+          <p class="display-1 mb-2 fw-semibold">Virtual Clinic</p>
+          <div class="mt-4">
+            <button
+              type="button"
+              class="btn btn-primary btn-lg btn-light fw-bold border-white bg-white mx-1"
+              data-bs-toggle="modal"
+              data-bs-target="#doctorModal"
+            >
+              Doctor
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-lg btn-light fw-bold border-white bg-white m-1"
+              data-bs-toggle="modal"
+              data-bs-target="#patientModal"
+            >
+              Patient
+            </button>
+>>>>>>> bc74b8bb4a6e9be3a76ed66366dc50089a0733fd
           </div>
         </div>
       </div>
     </div>
+<<<<<<< HEAD
   </div>
 
 
@@ -312,14 +362,371 @@
                 <div class="media-body flex-fill m-auto">
                   <h5>Mental Health</h5>
                 </div>
-              </div>
+=======
+
+    <!-- LOG-IN MODAL -->
+    <div
+      class="modal fade"
+      tabindex="-1"
+      id="exampleModal"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content rounded-4 shadow">
+          <div
+            class="modal-header p-5 pb-4 border-bottom-0"
+            style="color: black"
+          >
+            <!-- <h1 class="modal-title fs-5" >Modal title</h1> -->
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body p-5 pt-0 w-100 m-auto">
+            <img
+              class="mb-4 img-fluid"
+              src="2.png"
+              alt="logo"
+              width="75"
+              height="75"
+            />
+            <!-- <h1 class="fw-bold mb-3 fs-2 text-black">Log-in</h1> -->
+            <h1 class="h3 mb-3 fw-bold text-black">Please Sign in</h1>
+            <div class="form-floating mb-3">
+              <input
+                type="email"
+                class="form-control rounded-3 text-dark"
+                id="usernameLogin"
+                placeholder="userName10"
+              />
             </div>
+            <div class="form-floating mb-3">
+              <input
+                type="password"
+                class="form-control rounded-3"
+                id="passwordLogin"
+                placeholder="Password"
+              />
+            </div>
+            <div class="form-check d-flex gap-2 mb-3">
+              <input
+                id="rememberMe"
+                type="checkbox"
+                class="form-check-input me-1"
+              />
+              <label for="rememberMe" class="text-black"> Remember me </label>
+            </div>
+            <button
+              id="login"
+              class="w-100 btn btn-lg btn-primary"
+              type="submit"
+            >
+              Login in
+            </button>
+            <p class="mt-5 mb-3 text-muted">© 2017-2022</p>
+          </div>
+
+          <!-- <div class="modal-body p-5 pt-0">
+            <form class="">
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control rounded-3"
+                  id="floatingInput"
+                  placeholder="name@example.com"
+                />
+                <label for="floatingInput">Email address</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control rounded-3"
+                  id="floatingPassword"
+                  placeholder="Password"
+                />
+                <label for="floatingPassword">Password</label>
+              </div>
+              <button
+                class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
+                type="submit"
+              >
+                Log-in
+              </button>
+
+              <small class="text-secondary">No account yet? Click</small>
+              <small class="text-primary">Sign-up</small>
+              <small class="text-muted"
+                >By clicking Log-in, you agree to the terms of use.</small
+              >
+
+              <hr class="my-4" />
+
+              <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
+              <button
+                class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3"
+                type="submit"
+              >
+                <svg class="bi me-1" width="16" height="16">
+                  <use xlink:href="#twitter"></use>
+                </svg>
+                Sign up with Twitter
+              </button>
+              <button
+                class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3"
+                type="submit"
+              >
+                <svg class="bi me-1" width="16" height="16">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+                Sign up with Facebook
+              </button>
+              <button
+                class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3"
+                type="submit"
+              >
+                <svg class="bi me-1" width="16" height="16">
+                  <use xlink:href="#github"></use>
+                </svg>
+                Sign up with GitHub
+              </button>
+            </form>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- DOCTOR SIGN-UP MODAL -->
+    <div
+      class="modal fade"
+      tabindex="-1"
+      id="doctorModal"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content rounded-4 shadow">
+          <div
+            class="modal-header p-5 pb-4 border-bottom-0"
+            style="color: black"
+          >
+            <!-- <h1 class="modal-title fs-5" >Modal title</h1> -->
+            <h1 class="fw-bold mb-0 fs-2">Sign-up as a Doctor</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body p-5 pt-0">
+            <form>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control rounded-3"
+                  id="username"
+                  placeholder="username"
+                />
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control rounded-3"
+                  id="firstName"
+                  placeholder="First Name"
+                />
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control rounded-3"
+                  id="lastName"
+                  placeholder="Last Name"
+                />
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control rounded-3"
+                  id="emailReg"
+                  placeholder="name@example.com"
+                />
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control rounded-3"
+                  id="passwordReg"
+                  placeholder="Password"
+                />
+              </div>
+            </form>
+            <button
+              id="register"
+              class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
+            >
+              Sign-up
+            </button>
+
+            <!-- <small class="text-secondary">Already have an account? Click</small>
+            <small class="text-primary">Log-in</small>
+            <small class="text-muted"
+              >By clicking Sign-up, you agree to the terms of use.</small
+            >
+
+            <hr class="my-4" />
+
+            <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
+            <button
+              class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3"
+              type="submit"
+            >
+              <svg class="bi me-1" width="16" height="16">
+                <use xlink:href="#twitter"></use>
+              </svg>
+              Sign up with Twitter
+            </button>
+            <button
+              class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3"
+              type="submit"
+            >
+              <svg class="bi me-1" width="16" height="16">
+                <use xlink:href="#facebook"></use>
+              </svg>
+              Sign up with Facebook
+            </button>
+            <button
+              class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3"
+              type="submit"
+            >
+              <svg class="bi me-1" width="16" height="16">
+                <use xlink:href="#github"></use>
+              </svg>
+              Sign up with GitHub
+            </button> -->
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- PATIENT SIGN-UP MODAL -->
+    <div
+      class="modal fade"
+      tabindex="-1"
+      id="patientModal"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content rounded-4 shadow">
+          <div
+            class="modal-header p-5 pb-4 border-bottom-0"
+            style="color: black"
+          >
+            <!-- <h1 class="modal-title fs-5" >Modal title</h1> -->
+            <h1 class="fw-bold mb-0 fs-2">Sign-up as a Patient</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body p-5 pt-0">
+            <form>
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control rounded-3"
+                  id="floatingInpu"
+                  placeholder="name@example.com"
+                />
+                <label for="floatingInput">Email address</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control rounded-3"
+                  id="floatingPasswor"
+                  placeholder="Password"
+                />
+                <label for="floatingPassword">Password</label>
+>>>>>>> bc74b8bb4a6e9be3a76ed66366dc50089a0733fd
+              </div>
+              <button
+                class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
+                type="submit"
+              >
+                Log-in
+              </button>
+
+              <!-- <small class="text-secondary"
+                >Already have an account? Click</small
+              >
+              <small class="text-primary">Log-in</small>
+              <small class="text-muted"
+                >By clicking Sign-up, you agree to the terms of use.</small
+              >
+
+              <hr class="my-4" />
+
+              <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
+              <button
+                class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3"
+                type="submit"
+              >
+                <svg class="bi me-1" width="16" height="16">
+                  <use xlink:href="#twitter"></use>
+                </svg>
+                Sign up with Twitter
+              </button>
+              <button
+                class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3"
+                type="submit"
+              >
+                <svg class="bi me-1" width="16" height="16">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+                Sign up with Facebook
+              </button>
+              <button
+                class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3"
+                type="submit"
+              >
+                <svg class="bi me-1" width="16" height="16">
+                  <use xlink:href="#github"></use>
+                </svg>
+                Sign up with GitHub
+              </button> -->
+            </form>
+          </div>
+        </div>
+      </div>
+<<<<<<< HEAD
   </section>
+=======
+    </div>
+>>>>>>> bc74b8bb4a6e9be3a76ed66366dc50089a0733fd
 
+    <!-- FOOTER -->
+    <footer class="mt-auto text-white-50">
+      <p>
+       
+        <a href="https://getbootstrap.com/" class="text-white"></a>
+        <a href="https://twitter.com/mdo" class="text-white"></a>.
+      </p>
+    </footer>
 
+<<<<<<< HEAD
         <!-- FOOTER -->
         <footer class="mt-auto text-white-50">
         <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
@@ -328,7 +735,18 @@
  
 
               
+=======
+    <!--bootstrap JS-->
+>>>>>>> bc74b8bb4a6e9be3a76ed66366dc50089a0733fd
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="main.js"></script>
-</body>
+    <!--custom JS-->
+    <script src="main.js" type="module"></script>
+    <!--cryptoJS for password encrypt/decrypt-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+      integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
 </html>

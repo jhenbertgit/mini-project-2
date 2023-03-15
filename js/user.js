@@ -17,7 +17,7 @@ function signOut() {
   sessionStorage.removeItem("user");
   localStorage.removeItem("user");
   localStorage.removeItem("keepLoggedIn");
-  window.location = "homepage.html";
+  window.location = "user-page.html";
 }
 
 window.onload = function () {
@@ -25,16 +25,16 @@ window.onload = function () {
   if (currentUser == null) {
     userLink.innerText = "Create new account";
     userLink.classList.replace("nav-link", "btn");
-    userLink.classList.add("btn-success");
+    userLink.classList.add("btn-primary");
     userLink.href = "index.html";
 
     signoutLink.innerText = "Login";
     signoutLink.classList.replace("nav-link", "btn");
-    signoutLink.classList.add("btn-success");
+    signoutLink.classList.add("btn-primary");
     signoutLink.href = "index.html";
   } else {
     userLink.innerText = currentUser.username;
-    header.innerText = `Welcome, ${currentUser.firstName} ${currentUser.lastName}`;
+    header.innerText = `Welcome, ${currentUser.firstName}`;
     userLink.classList.replace("nav-link", "btn");
     userLink.classList.remove("btn-success");
     userLink.href = "#";
