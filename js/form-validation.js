@@ -75,7 +75,8 @@ function validation() {
   return true;
 }
 
-function registerUser() {
+function registerUser(e) {
+  e.preventDefault();
   if (!validation()) {
     return;
   }
@@ -113,7 +114,8 @@ function encryptPass() {
 }
 register.addEventListener("click", registerUser);
 
-function authUser() {
+function authUser(e) {
+  e.preventDefault();
   const dbRef = ref(database);
   let username = document.getElementById("usernameLogin");
   let password = document.getElementById("passwordLogin");
