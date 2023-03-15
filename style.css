@@ -41,3 +41,8 @@ body {
 .container-ht {
   height: 30rem;
 }
+
+.nav-link:hover{
+  color: #fff;
+
+}
