@@ -35,11 +35,11 @@ const login = document.getElementById("login");
 const register = document.getElementById("register");
 
 //Validation
-function isEmpty(str) {
+const isEmpty = (str) => {
   return str === null || str.match(/^ *$/) !== null;
-}
+};
 
-function validation() {
+const validation = () => {
   //using regular expression
   let nameregex = /^[a-zA-Z]+$/;
   //standard email expression
@@ -73,9 +73,9 @@ function validation() {
     return false;
   }
   return true;
-}
+};
 
-function registerUser(e) {
+const registerUser = (e) => {
   e.preventDefault();
   if (!validation()) {
     return;
@@ -107,15 +107,16 @@ function registerUser(e) {
       alert(errorMessage);
     });
   document.getElementById("signupForm").reset();
-}
+  document.getElementById("username").focus();
+};
 //password encryption
-function encryptPass() {
+const encryptPass = () => {
   let pass = CryptoJS.AES.encrypt(password.value, password.value);
   return pass.toString();
-}
+};
 register.addEventListener("click", registerUser);
 
-function authUser(e) {
+const authUser = (e) => {
   e.preventDefault();
   const dbRef = ref(database);
   let username = document.getElementById("usernameLogin");
@@ -142,18 +143,19 @@ function authUser(e) {
       alert(errorMessage);
     });
   document.getElementById("loginForm").reset();
-}
+  document.getElementById("usernameLogin").focus();
+};
 login.addEventListener("click", authUser);
 
 //decrypt password
-function decryptPass(dbpass) {
+const decryptPass = (dbpass) => {
   let password = document.getElementById("passwordLogin");
   let pass = CryptoJS.AES.decrypt(dbpass, password.value);
   return pass.toString(CryptoJS.enc.Utf8);
-}
+};
 
-function loggedIn(user) {
-  let keepLoogedIn = document.getElementById("rememberMe").checked;
+const loggedIn = (user) => {
+  let keepLoogedIn = document.getElementById("stayLogin").checked;
 
   if (!keepLoogedIn) {
     sessionStorage.setItem("user", JSON.stringify(user));
@@ -163,4 +165,4 @@ function loggedIn(user) {
     localStorage.setItem("user", JSON.stringify(user));
     window.location = "user-page.html";
   }
-}
+};

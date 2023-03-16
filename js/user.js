@@ -1,3 +1,5 @@
+import { getProvince } from "./api.js";
+
 let userLink = document.getElementById("user-link");
 let signoutLink = document.getElementById("signout-link");
 let header = document.getElementById("header-text");
@@ -45,3 +47,5 @@ window.onload = function () {
     signoutLink.href = "javascript:signOut()";
   }
 };
+
+getProvince().then((data) => console.log(data));

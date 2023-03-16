@@ -6,17 +6,17 @@ const getProvince = async () => {
     if (!response.ok) {
       throw new Error("Server is busy!");
     }
-    const responseData = await response.json();
-    for (let provinceObj of responseData) {
-      const { name } = provinceObj;
-      const opt = document.createElement("option");
-      const text = document.createTextNode(name);
-      // opt.appendChild(text);
-      // opt.setAttribute("value", `${name}`);
-      // document.querySelector("select").appendChild(opt);
+    return await response.json();
+    // for (let provinceObj of responseData) {
+    //   const { name } = provinceObj;
+    //   const opt = document.createElement("option");
+    //   const text = document.createTextNode(name);
+    //   // opt.appendChild(text);
+    //   // opt.setAttribute("value", `${name}`);
+    //   // document.querySelector("select").appendChild(opt);
 
-      console.log(name);
-    }
+    //   console.log(name);
+    // }
   } catch (err) {
     alert(`${err.name}: ${err.message}`);
   }
@@ -29,16 +29,16 @@ const getCities = async () => {
     if (!response.ok) {
       throw new Error("Server is busy!");
     }
-    const responseData = await response.json();
-    for (let cityObj of responseData) {
-      const { name } = cityObj;
-      const opt = document.createElement("option");
-      const text = document.createTextNode(name);
-      // opt.appendChild(text);
-      // opt.setAttribute("value", `${name}`);
-      // document.querySelector("select").appendChild(opt);
-      console.log(name);
-    }
+    return await response.json();
+    // for (let cityObj of responseData) {
+    //   const { name } = cityObj;
+    //   const opt = document.createElement("option");
+    //   const text = document.createTextNode(name);
+    //   opt.appendChild(text);
+    //   opt.setAttribute("value", `${name}`);
+    //   document.querySelector("select").appendChild(opt);
+    //   console.log(name);
+    // }
   } catch (err) {
     alert(`${err.name}: ${err.message}`);
   }
@@ -53,22 +53,20 @@ const getMunicipalities = async () => {
     if (!response.ok) {
       throw new Error("Server is busy!");
     }
-    const responseData = await response.json();
-    for (let munObj of responseData) {
-      const { name } = munObj;
-      const opt = document.createElement("option");
-      const text = document.createTextNode(name);
-      // opt.appendChild(text);
-      // opt.setAttribute("value", `${name}`);
-      // document.querySelector("select").appendChild(opt);
+    return await response.json();
+    // for (let munObj of responseData) {
+    //   const { name } = munObj;
+    //   const opt = document.createElement("option");
+    //   const text = document.createTextNode(name);
+    //   opt.appendChild(text);
+    //   opt.setAttribute("value", `${name}`);
+    //   document.querySelector("select").appendChild(opt);
 
-      console.log(name);
-    }
+    //   console.log(name);
+    // }
   } catch (err) {
     alert(`${err.name}: ${err.message}`);
   }
 };
 
-// getProvince();
-// getCities();
-// getMunicipalities();
+export { getProvince, getCities, getMunicipalities };
