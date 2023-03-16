@@ -4,20 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blucare Virtual Medical Clinic</title>
-    <link rel="icon" type="image/x-icon" href="2.png" />
+    <title>Blucare eClinic</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/2.png" />
 
-    <!-- google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,600&display=swap"
-      rel="stylesheet"
-    />
     <!-- bootstrap css -->
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
 
     <!-- CSS -->
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -188,10 +182,213 @@
                 </button>
               </form>
             </div>
+=======
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="cover d-flex h-100 text-bg-dark img-fluid">
+      <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+          <!-- <h3 class="float-md-start mb-0">Cover</h3> -->
+          <nav
+            class="nav nav-masthead d-flex justify-content-center float-md-end"
+          >
+            <a class="nav-link fw-bold p-1 active" aria-current="page" href="#"
+              >Home</a
+            >
+            <a class="nav-link fw-bold p-1" href="about-us.html"target=_blank">About Us</a>
+            <a class="nav-link fw-bold p-1" href="services.html"target=_blank">Services</a>
+            <a class="nav-link fw-bold p-1" href="faqs.html"target=_blank>FAQs</a>
+            <button
+              type="button"
+              class="btn btn-primary fw-bold px-2 py-1 mx-3"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Sign-up/Log-in
+            </button>
+          </nav>
+        </header>
+        <main class="d-flex align-items-center px-3" style="height: 560px">
+          <div class="row flex-fill pb-5">
+            <div class="col-4">
+              <p class="display-1 mb-2 fw-bold">BluCare</p>
+              <p class="display-6 mb-2 fw-normal">eClinic</p>
+              <!-- <p class="lead">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-lg btn-light fw-bold border-white bg-white mx-1"
+                  data-bs-toggle="modal"
+                  data-bs-target="#doctorModal"
+                >
+                  Doctor
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary btn-lg btn-light fw-bold border-white bg-white m-1"
+                  data-bs-toggle="modal"
+                  data-bs-target="#patientModal"
+                >
+                  Patient
+                </button>
+              </p> -->
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- LOG-IN MODAL -->
+    <div
+      class="modal fade"
+      tabindex="-1"
+      id="exampleModal"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content rounded-4 shadow">
+          <div
+            class="modal-header p-5 pb-4 border-bottom-0"
+            style="color: black"
+          >
+            <!-- <h1 class="modal-title fs-5" >Modal title</h1> -->
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="form-signin modal-body p-5 pt-0 w-100 m-auto">
+            <form>
+              <div class="d-flex justify-content-center">
+                <img
+                  class="mb-4 img-fluid"
+                  src="2.png"
+                  alt=""
+                  width="75"
+                  height="75"
+                />
+              </div>
+              <h1 class="fw-bold mb-3 fs-2 text-black text-center">Log-in</h1>
+              <!-- <h1 class="h3 mb-3 fw-bold text-black">Please sign in</h1> -->
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control rounded-3"
+                  id="usernameLogin"
+                  placeholder="username"
+                />
+                <label for="usernameLogin">Username</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control rounded-3"
+                  id="passwordLogin"
+                  placeholder="Password"
+                />
+                <label for="passwordLogin">Password</label>
+              </div>
+              <div class="checkbox mb-3">
+                <label>
+                  <input id="rememberMe" type="checkbox" class="me-1" /><span
+                    class="text-black"
+                    >Remember me</span
+                  >
+                </label>
+              </div>
+              <button
+                id="login"
+                type="submit"
+                class="w-100 btn btn-lg btn-primary"
+              >
+                Login
+              </button>
+            </form>
+
+            <div class="mt-2">
+              <small class="text-primary">No account yet?</small>
+              <small class="text-muted">Sign-up below</small>
+            </div>
+
+            <h1 class="fw-bold mb-3 fs-2 text-black text-center my-4">
+              Sign-up
+            </h1>
+
+            <form>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control rounded-3"
+                  id="username"
+                  placeholder="username"
+                />
+                <label for="username">Username</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control rounded-3"
+                  id="emailReg"
+                  placeholder="name@example.com"
+                />
+                <label for="emailReg">Email address</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control rounded-3"
+                  id="firstName"
+                  placeholder="Firstname"
+                />
+                <label for="username">First Name</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control rounded-3"
+                  id="lastName"
+                  placeholder="lastname"
+                />
+                <label for="lastName">Last Name</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control rounded-3"
+                  id="passwordReg"
+                  placeholder="Password"
+                />
+                <label for="passwordReg">Password</label>
+              </div>
+
+              <button
+                id="register"
+                type="submit"
+                class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
+              >
+                Sign-up
+              </button>
+            </form>
+
+            <div class="mt-2">
+              <small class="text-muted"
+                >By clicking Sign-up, you agree to the <a href="termsofuse.html">Terms of Use</a></small
+              >
+            </div>
+            <!-- <p class="mt-5 mb-3 text-muted">© 2017-2022</p> -->
+>>>>>>> e06ced4b209a25c74d9d1df20dee5a6634ef68fd
           </div>
         </div>
       </div>
     </div>
+<<<<<<< HEAD
   </div>
 
 
@@ -199,6 +396,12 @@
 <!-- SECTION 1 -->
   <section>
       <!-- DIV 1 (section 1.1)-->
+=======
+    <!-- WHY BLUECARE -->
+    <!-- MAIN SECTION -->
+    <section>
+      <!-- DIV 1 -->
+>>>>>>> e06ced4b209a25c74d9d1df20dee5a6634ef68fd
       <div class="container">
         <div class="pb-5">
           <div class="row pt-5">
@@ -209,57 +412,85 @@
           <div class="row">
             <div class="col-sm-12">
               <p class="fw-normal text-center">
-                BlueCare? is a telehealth membership service that allows you to have 24/7 unlimited access to licensed doctors, no appointment needed. You can consult a doctor via voice or video call anytime and as often as you want.
+                BlueCare? is a telehealth membership service that allows you to
+                have 24/7 unlimited access to licensed doctors, no appointment
+                needed. You can consult a doctor via voice or video call anytime
+                and as often as you want.
               </p>
             </div>
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       <!-- DIV 2 (section 1.2)-->
       <div class="container-fluid d-flex align-items-center" style="height: 700px;" id="sec_2" >
+=======
+      <!-- DIV 2 -->
+      <div
+        class="container-fluid d-flex align-items-center"
+        style="height: 700px"
+        id="sec_2"
+      >
+>>>>>>> e06ced4b209a25c74d9d1df20dee5a6634ef68fd
         <div class="row d-flex align-items-center flex-fill">
           <div class="col-6 d-flex justify-content-end">
-            <div style="height: 90%; width: 90%;">
-              <img src="https://konsulta.md/assets/img/news-asset.png" class="png-1 img-fluid" alt="">
+            <div style="height: 90%; width: 90%">
+              <img
+                src="https://konsulta.md/assets/img/news-asset.png"
+                class="png-1 img-fluid"
+                alt=""
+              />
             </div>
           </div>
           <div class="col-6">
-              <div class="my-5">
-                  <div class="container mb-5">
-                      <h3>24/7</h3>
-                      <p>
-                          "The doctor is "
-                          <mark>always online</mark>
-                      </p>
-                  </div>
-                  <div class="container mb-5">
-                      <h3>No Appointment Needed</h3>
-                      <p>
-                          Talk to a doctor
-                          <mark>immediately.</mark>
-                      </p>
-                  </div>
-                  <div class="container">
-                      <h3>Unlimited</h3>
-                      <p>
-                          "Consult as "
-                          <mark>often</mark>
-                          " as you want."
-                      </p>
-                  </div>
+            <div class="my-5">
+              <div class="container mb-5">
+                <h3>24/7</h3>
+                <p>
+                  "The doctor is "
+                  <mark>always online</mark>
+                </p>
               </div>
+              <div class="container mb-5">
+                <h3>No Appointment Needed</h3>
+                <p>
+                  Talk to a doctor
+                  <mark>immediately.</mark>
+                </p>
+              </div>
+              <div class="container">
+                <h3>Unlimited</h3>
+                <p>
+                  "Consult as "
+                  <mark>often</mark>
+                  " as you want."
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+<<<<<<< HEAD
     </div>
       <!-- DIV 3 (section 1.3)-->
+=======
+      <!-- DIV 3 -->
+>>>>>>> e06ced4b209a25c74d9d1df20dee5a6634ef68fd
       <div class="container py-5">
         <h4>Enjoy these benefits when you consult our licensed doctors:</h4>
         <div class="p-4">
           <div class="row">
             <div class="col col-lg-4 col-6">
               <div class="media d-flex mb-5">
-                <div class="flex-shrink-1 d-flex align-items-center" style="height: 110px; width: 110px;">
-                  <img src="https://konsulta.md/assets/img/e-prescription.png" alt="e-prescription" class="align-self-center img-fluid">
+                <div
+                  class="flex-shrink-1 d-flex align-items-center"
+                  style="height: 110px; width: 110px"
+                >
+                  <img
+                    src="https://konsulta.md/assets/img/e-prescription.png"
+                    alt="e-prescription"
+                    class="align-self-center img-fluid"
+                  />
                 </div>
                 <div class="media-body m-auto">
                   <h5>e-Prescription</h5>
@@ -268,8 +499,15 @@
             </div>
             <div class="col col-lg-4 col-6">
               <div class="media d-flex mb-5">
-                <div class="flex-shrink-1 d-flex align-items-center" style="height: 110px; width: 110px;">
-                  <img src="https://konsulta.md/assets/img/e-laboratory.png" alt="e-laboratory" class="align-self-center img-fluid">
+                <div
+                  class="flex-shrink-1 d-flex align-items-center"
+                  style="height: 110px; width: 110px"
+                >
+                  <img
+                    src="https://konsulta.md/assets/img/e-laboratory.png"
+                    alt="e-laboratory"
+                    class="align-self-center img-fluid"
+                  />
                 </div>
                 <div class="media-body m-auto">
                   <h5>e-Laboratory</h5>
@@ -278,8 +516,15 @@
             </div>
             <div class="col col-lg-4 col-6">
               <div class="media d-flex mb-5">
-                <div class="flex-shrink-1 d-flex align-items-center" style="height: 110px; width: 110px;">
-                  <img src="https://konsulta.md/assets/img/e-medical_cert.png" alt="e-medical_certificate" class="align-self-center img-fluid">
+                <div
+                  class="flex-shrink-1 d-flex align-items-center"
+                  style="height: 110px; width: 110px"
+                >
+                  <img
+                    src="https://konsulta.md/assets/img/e-medical_cert.png"
+                    alt="e-medical_certificate"
+                    class="align-self-center img-fluid"
+                  />
                 </div>
                 <div class="media-body m-auto">
                   <h5>e-Medical Certificate</h5>
@@ -288,8 +533,15 @@
             </div>
             <div class="col col-lg-4 col-6">
               <div class="media d-flex mb-5">
-                <div class="flex-shrink-1 d-flex align-items-center" style="height: 110px; width: 110px;">
-                  <img src="https://konsulta.md/assets/img/general_health.png" alt="general_health" class="align-self-center img-fluid">
+                <div
+                  class="flex-shrink-1 d-flex align-items-center"
+                  style="height: 110px; width: 110px"
+                >
+                  <img
+                    src="https://konsulta.md/assets/img/general_health.png"
+                    alt="general_health"
+                    class="align-self-center img-fluid"
+                  />
                 </div>
                 <div class="media-body m-auto">
                   <h5>General Health Information</h5>
@@ -298,8 +550,15 @@
             </div>
             <div class="col col-lg-4 col-6">
               <div class="media d-flex mb-5">
-                <div class="flex-shrink-1 d-flex align-items-center" style="height: 110px; width: 110px;">
-                  <img src="https://konsulta.md/assets/img/proper_medication.png" alt="proper_medication" class="align-self-center img-fluid">
+                <div
+                  class="flex-shrink-1 d-flex align-items-center"
+                  style="height: 110px; width: 110px"
+                >
+                  <img
+                    src="https://konsulta.md/assets/img/proper_medication.png"
+                    alt="proper_medication"
+                    class="align-self-center img-fluid"
+                  />
                 </div>
                 <div class="media-body m-auto">
                   <h5>Proper Medication</h5>
@@ -308,21 +567,37 @@
             </div>
             <div class="col col-lg-4 col-6">
               <div class="media d-flex mb-5">
-                <div class="flex-shrink-1 d-flex align-items-center" style="height: 110px; width: 110px;">
-                  <img src="https://konsulta.md/assets/img/mental_health.png" alt="mental_helth" class="align-self-center img-fluid">
+                <div
+                  class="flex-shrink-1 d-flex align-items-center"
+                  style="height: 110px; width: 110px"
+                >
+                  <img
+                    src="https://konsulta.md/assets/img/mental_health.png"
+                    alt="mental_helth"
+                    class="align-self-center img-fluid"
+                  />
                 </div>
                 <div class="media-body flex-fill m-auto">
                   <h5>Mental Health</h5>
                 </div>
               </div>
+<<<<<<< HEAD
               <button
+=======
+             
+              <!-- <button
+>>>>>>> e06ced4b209a25c74d9d1df20dee5a6634ef68fd
                 class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
                 type="submit"
               >
                 Log-in
               </button>
 
+<<<<<<< HEAD
               <!-- <small class="text-secondary"
+=======
+              <small class="text-secondary"
+>>>>>>> e06ced4b209a25c74d9d1df20dee5a6634ef68fd
                 >Already have an account? Click</small
               >
               <small class="text-primary">Log-in</small>
@@ -360,10 +635,11 @@
                 </svg>
                 Sign up with GitHub
               </button> -->
-            </form>
+            </div>
           </div>
         </div>
       </div>
+<<<<<<< HEAD
   </section>
 
 
@@ -562,11 +838,47 @@
 
 
 
+=======
+    </section>
+
+
+    <br>
+
+    <div class="container table-group-divider" style="color: lightseagreen;"> 
+      <br>
+      <div class="doctors">
+        <div class="text text-center"> <br>
+          <h2>OUR DOCTORS</h2>
+          <br>
+          <div _ngcontent-konsulta-md-app-c118="" class="container section-content"><div _ngcontent-konsulta-md-app-c118="" class="row">
+            <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/general_medicine.png" class="img-fluid"></div>
+          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/family_medicine.png" class="img-fluid"></div>
+          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/dermatology.png" class="img-fluid"></div>
+          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/dentistry.png" class="img-fluid">
+          </div><div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/internal_medicine.png" class="img-fluid"></div>
+          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/obstetrics (1).png" class="img-fluid"></div>
+          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/opthalmology (1).png" class="img-fluid"></div>
+          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/pediatrics (1).png" class="img-fluid"></div>
+          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/psychiatry.png" class="img-fluid"></div>
+          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/rehabilitation_medicine.png" class="img-fluid"></div>
+          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/psychology.png" class="img-fluid"></div>
+          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/surgery.png" class="img-fluid"></div>
+        </div></div>
+        </div>
+        <br>
+        <div class="container table-group-divider text text-center">
+          <div></div> <br> <br>
+          <h2>OUR PARTNERS</h2> <br>
+          
+        </div>
+      </div>
+>>>>>>> e06ced4b209a25c74d9d1df20dee5a6634ef68fd
 
 
     <!-- FOOTER -->
     <footer class="mt-auto text-white-50">
       <p>
+<<<<<<< HEAD
         <a href="https://getbootstrap.com/" class="text-white"></a>
         <a href="https://twitter.com/mdo" class="text-white"></a>
       </p>
@@ -585,6 +897,14 @@
  
 
               
+=======
+        Cover template for
+        <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by
+        <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.
+      </p>
+    </footer>
+
+>>>>>>> e06ced4b209a25c74d9d1df20dee5a6634ef68fd
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <!--custom JS-->
     <script src="main.js" type="module"></script>
