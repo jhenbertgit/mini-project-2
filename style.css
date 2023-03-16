@@ -34,7 +34,7 @@ body {
 /* I upadted the bg to an illustration */
 
 .cover {
-  background-image: url("bg2.jpg");
+  background-image: url("/assets/images/bg2.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   /* background-size: cover; */
