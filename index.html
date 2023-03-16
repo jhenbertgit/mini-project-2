@@ -24,9 +24,9 @@
             <a class="nav-link fw-bold p-1 active" aria-current="page" href="#"
               >Home</a
             >
-            <a class="nav-link fw-bold p-1" href="about-us.html"target=_blank">About Us</a>
-            <a class="nav-link fw-bold p-1" href="services.html"target=_blank">Services</a>
-            <a class="nav-link fw-bold p-1" href="faqs.html"target=_blank>FAQs</a>
+            <a class="nav-link fw-bold p-1" href="about-us.html">About Us</a>
+            <a class="nav-link fw-bold p-1" href="services.html">Services</a>
+            <a class="nav-link fw-bold p-1" href="faqs.html">FAQs</a>
             <button
               type="button"
               class="btn btn-primary fw-bold px-2 py-1 mx-3"
@@ -90,12 +90,12 @@
           </div>
 
           <div class="form-signin modal-body p-5 pt-0 w-100 m-auto">
-            <form>
+            <form id="loginForm">
               <div class="d-flex justify-content-center">
                 <img
                   class="mb-4 img-fluid"
-                  src="2.png"
-                  alt=""
+                  src="./assets/images/2.png"
+                  alt="logo"
                   width="75"
                   height="75"
                 />
@@ -124,7 +124,7 @@
                 <label>
                   <input id="rememberMe" type="checkbox" class="me-1" /><span
                     class="text-black"
-                    >Remember me</span
+                    >Stay Login</span
                   >
                 </label>
               </div>
@@ -146,7 +146,7 @@
               Sign-up
             </h1>
 
-            <form>
+            <form id="signupForm">
               <div class="form-floating mb-3">
                 <input
                   type="text"
@@ -207,7 +207,8 @@
 
             <div class="mt-2">
               <small class="text-muted"
-                >By clicking Sign-up, you agree to the <a href="termsofuse.html">Terms of Use</a></small
+                >By clicking Sign-up, you agree to the
+                <a href="termsofuse.html">Terms of Use</a></small
               >
             </div>
             <!-- <p class="mt-5 mb-3 text-muted">© 2017-2022</p> -->
@@ -215,6 +216,7 @@
         </div>
       </div>
     </div>
+
     <!-- WHY BLUECARE -->
     <!-- MAIN SECTION -->
     <section>
@@ -388,7 +390,7 @@
                   <h5>Mental Health</h5>
                 </div>
               </div>
-             
+
               <!-- <button
                 class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
                 type="submit"
@@ -440,38 +442,427 @@
       </div>
     </section>
 
-
-    <br>
-
-    <div class="container table-group-divider" style="color: lightseagreen;"> 
-      <br>
-      <div class="doctors">
-        <div class="text text-center"> <br>
-          <h2>OUR DOCTORS</h2>
-          <br>
-          <div _ngcontent-konsulta-md-app-c118="" class="container section-content"><div _ngcontent-konsulta-md-app-c118="" class="row">
-            <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/general_medicine.png" class="img-fluid"></div>
-          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/family_medicine.png" class="img-fluid"></div>
-          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/dermatology.png" class="img-fluid"></div>
-          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/dentistry.png" class="img-fluid">
-          </div><div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/internal_medicine.png" class="img-fluid"></div>
-          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/obstetrics (1).png" class="img-fluid"></div>
-          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/opthalmology (1).png" class="img-fluid"></div>
-          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/pediatrics (1).png" class="img-fluid"></div>
-          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/psychiatry.png" class="img-fluid"></div>
-          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/rehabilitation_medicine.png" class="img-fluid"></div>
-          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/psychology.png" class="img-fluid"></div>
-          <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3"><img _ngcontent-konsulta-md-app-c118="" src="/assets/images/surgery.png" class="img-fluid"></div>
-        </div></div>
+    <!-- SECTION 2 -->
+    <section>
+      <!-- DIV 2.1 -->
+      <div class="row container-fluid d-flex section-title mb-5">
+        <div class="col-10">
+          <p></p>
+          <hr class="" />
         </div>
-        <br>
-        <div class="container table-group-divider text text-center">
-          <div></div> <br> <br>
-          <h2>OUR PARTNERS</h2> <br>
-          
+        <div class="col-2">
+          <h2 class="text-center">Our Plans</h2>
         </div>
       </div>
 
+      <!-- DIV 2.2 -->
+      <div class="container mb-5">
+        <div
+          class="row position-relative w-100 m-auto align-items-center justify-content-center"
+        >
+          <div class="col-md-12 col-lg-6">
+            <div class="d-flex flex-column justify-content-start p-5">
+              <div class="text-primary display-4 mb-0 text-center">
+                <p class="mb-0">INTRODUCING</p>
+                <p class="mb-0 bg-primary text-white rounded-pill fw-bold py-2">
+                  BLUECARE
+                </p>
+              </div>
+              <div
+                class="text-dark fw-light h4 mt-5 text-center d-none d-md-block"
+              >
+                <p>Get access to prioritized daily</p>
+                <p>consultations with a</p>
+                <p>General Physician for 7 days</p>
+              </div>
+              <div class="text-primary fw-light h1 mt-5 text-center">
+                <p class="mb-0 fw-bold">PHP 2,999 / PACKAGE</p>
+              </div>
+              <button
+                class="btn btn-secondary rounded-pill px-5 mt-5 align-self-center"
+              >
+                <span class="h4 fw-bold">BUY NOW</span>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-6">
+            <img
+              src="https://konsulta.md/assets/img/konsultacare_banner.png"
+              alt="BLUECARE"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- DIV 2.3 -->
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-auto mr-auto left">
+            <h4 class="text-info-emphasis fw-bold">Annual Plans</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIV 2.4 -->
+      <div
+        class="row position-relative w-100 m-auto align-items-center justify-content-center"
+      >
+        <div class="desk-bg"></div>
+        <div class="container-xl">
+          <div class="row section-content">
+            <div class="col-md-12 col-lg-4">
+              <h4 class="text-center">PERSONAL ANNUAL</h4>
+              <div class="card shadow">
+                <div class="card-img-top">
+                  <img
+                    src="https://konsulta.md/assets/img/personal_annual.png"
+                    alt=""
+                    class="img-fluid"
+                  />
+                  <div class="subscription-tag rounded-circle text-center">
+                    <p class="price mt-3">499</p>
+                    <p class="desk mb-3">Annual</p>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <ul class="card-text mt-3">
+                      <li>12 Months Membership</li>
+                      <li>UNLIMITED Voice Consult</li>
+                      <li>12 Video Consults</li>
+                      <li>
+                        e-Prescription, e-Laboratory Request, e-Medical
+                        Certificate
+                      </li>
+                      <li>Access to Partner Benefits</li>
+                      <li>1 member</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-4">
+              <h4 class="text-center">PERSONAL ANNUAL</h4>
+              <div class="card shadow">
+                <div class="card-img-top">
+                  <img
+                    src="https://konsulta.md/assets/img/personal_annual.png"
+                    alt=""
+                    class="img-fluid"
+                  />
+                  <div class="subscription-tag rounded-circle text-center">
+                    <p class="price">499</p>
+                    <p class="desk">Annual</p>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <ul class="card-text mt-3">
+                      <li>12 Months Membership</li>
+                      <li>UNLIMITED Voice Consult</li>
+                      <li>12 Video Consults</li>
+                      <li>
+                        e-Prescription, e-Laboratory Request, e-Medical
+                        Certificate
+                      </li>
+                      <li>Access to Partner Benefits</li>
+                      <li>1 member</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-4">
+              <h4 class="text-center">PERSONAL ANNUAL</h4>
+              <div class="card shadow">
+                <div class="card-img-top">
+                  <img
+                    src="https://konsulta.md/assets/img/personal_annual.png"
+                    alt=""
+                    class="img-fluid"
+                  />
+                  <div class="subscription-tag rounded-circle text-center">
+                    <p class="price">499</p>
+                    <p class="desk">Annual</p>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <ul class="card-text mt-3">
+                      <li>12 Months Membership</li>
+                      <li>UNLIMITED Voice Consult</li>
+                      <li>12 Video Consults</li>
+                      <li>
+                        e-Prescription, e-Laboratory Request, e-Medical
+                        Certificate
+                      </li>
+                      <li>Access to Partner Benefits</li>
+                      <li>1 member</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c"></rect>
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    Thumbnail
+                  </text>
+                </svg>
+                <div class="card-body">
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        View
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        Edit
+                      </button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c"></rect>
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    Thumbnail
+                  </text>
+                </svg>
+                <div class="card-body">
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        View
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        Edit
+                      </button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c"></rect>
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    Thumbnail
+                  </text>
+                </svg>
+                <div class="card-body">
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        View
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        Edit
+                      </button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container table-group-divider" style="color: lightseagreen">
+      <br />
+      <div class="doctors">
+        <div class="text text-center">
+          <br />
+          <h2>OUR DOCTORS</h2>
+          <br />
+          <div
+            _ngcontent-konsulta-md-app-c118=""
+            class="container section-content"
+          >
+            <div _ngcontent-konsulta-md-app-c118="" class="row">
+              <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3">
+                <img
+                  _ngcontent-konsulta-md-app-c118=""
+                  src="/assets/images/general_medicine.png"
+                  class="img-fluid"
+                />
+              </div>
+              <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3">
+                <img
+                  _ngcontent-konsulta-md-app-c118=""
+                  src="/assets/images/family_medicine.png"
+                  class="img-fluid"
+                />
+              </div>
+              <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3">
+                <img
+                  _ngcontent-konsulta-md-app-c118=""
+                  src="/assets/images/dermatology.png"
+                  class="img-fluid"
+                />
+              </div>
+              <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3">
+                <img
+                  _ngcontent-konsulta-md-app-c118=""
+                  src="/assets/images/dentistry.png"
+                  class="img-fluid"
+                />
+              </div>
+              <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3">
+                <img
+                  _ngcontent-konsulta-md-app-c118=""
+                  src="/assets/images/internal_medicine.png"
+                  class="img-fluid"
+                />
+              </div>
+              <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3">
+                <img
+                  _ngcontent-konsulta-md-app-c118=""
+                  src="/assets/images/obstetrics (1).png"
+                  class="img-fluid"
+                />
+              </div>
+              <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3">
+                <img
+                  _ngcontent-konsulta-md-app-c118=""
+                  src="/assets/images/opthalmology (1).png"
+                  class="img-fluid"
+                />
+              </div>
+              <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3">
+                <img
+                  _ngcontent-konsulta-md-app-c118=""
+                  src="/assets/images/pediatrics (1).png"
+                  class="img-fluid"
+                />
+              </div>
+              <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3">
+                <img
+                  _ngcontent-konsulta-md-app-c118=""
+                  src="/assets/images/psychiatry.png"
+                  class="img-fluid"
+                />
+              </div>
+              <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3">
+                <img
+                  _ngcontent-konsulta-md-app-c118=""
+                  src="/assets/images/rehabilitation_medicine.png"
+                  class="img-fluid"
+                />
+              </div>
+              <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3">
+                <img
+                  _ngcontent-konsulta-md-app-c118=""
+                  src="/assets/images/psychology.png"
+                  class="img-fluid"
+                />
+              </div>
+              <div _ngcontent-konsulta-md-app-c118="" class="col-4 col-md-3">
+                <img
+                  _ngcontent-konsulta-md-app-c118=""
+                  src="/assets/images/surgery.png"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="container table-group-divider text text-center">
+            <div></div>
+            <br />
+            <br />
+            <h2>OUR PARTNERS</h2>
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="mt-auto text-white-50">

@@ -106,6 +106,7 @@ function registerUser(e) {
       let errorMessage = error.message;
       alert(errorMessage);
     });
+  document.getElementById("signupForm").reset();
 }
 //password encryption
 function encryptPass() {
@@ -140,6 +141,7 @@ function authUser(e) {
       let errorMessage = error.message;
       alert(errorMessage);
     });
+  document.getElementById("loginForm").reset();
 }
 login.addEventListener("click", authUser);
 
