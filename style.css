@@ -3,7 +3,6 @@ body {
   height: 100vh;
 }
 
-<<<<<<< HEAD
 .cover {
     background-image: url('bg.png');
     background-repeat: no-repeat;
@@ -35,48 +34,132 @@ body {
 .media-body {
   flex: 1;
 }
-=======
-/* COVER HEADER*/
-.nav-masthead .nav-link {
-  color: rgba(255, 255, 255, 0.5);
-  border-bottom: 0.25rem solid transparent;
+
+
+/* BLUECARE SECTION 2*/
+.section-title {
+  /* font-family: Bariol Bold; */
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  color: #0fb0ba;
 }
 
-.nav-masthead .nav-link:hover,
-.nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, 0.25);
+
+/* BLUECARE SECTION 2.4*/
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
 }
 
-.nav-masthead .nav-link + .nav-link {
-  margin-left: 1rem;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 
-.nav-masthead .active {
+.card-text{
+  color: #969696;
+  font-size: .9rem;
+  text-align: justify;
+  font-family: Bariol Regular;
+}
+
+.subscription-tag {
+  position: absolute;
+  bottom: calc(-2.5rem + 5px);
+  right: 1rem;
+  height: 5rem;
+  width: 5rem;
+  background-color: rgba(0,178,191,.6);
   color: #fff;
-  border-bottom-color: #fff;
+  border: 0.7px solid #fff;
+  display: flex;
+  flex-flow: column;
+  font-family: sans-serif;
 }
 
-/* COVER BODY */
-.cover-container {
-  max-width: 42em;
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(10,68,72,.125);
+  border-radius: 0.6rem;
 }
 
-/* I upadted the bg to an illustration */
+.card-img-top {
+  position: relative;
+  border-top-left-radius: calc(0.6rem - 1px);
+  border-top-right-radius: calc(0.6rem - 1px);
+  flex-shrink: 0;
+  width: 100%;
+}
 
-.bg-body {
-  background-image: url("bg2.jpg");
+
+
+.section-content {
+  font-family: Bariol Regular;
+  font-size: 1.15rem;
+  line-height: 2.2;
+  word-spacing: 1px;
+  color: #0fb0ba;
+}
+
+.price{
+  line-height: 1;
+  margin-top: auto;
+  margin-bottom: 0;
+  font-size: 1.85rem;
+}
+
+.desk{
+  margin-top: 0;
+  margin-bottom: auto;
+  line-height: 1;
+  font-size: .85rem;
+  font-weight: lighter;
+}
+
+
+.desk-bg {
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  background: #e7eff0;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  /* background-size: cover; */
-  background-size: 100% 100%;
+  background-size: 100% 80%;
+  background-position: 50%;
+  display: none;
 }
 
-.container-ht {
-  height: 30rem;
+.rounded-circle {
+  border-radius: 50%!important;
 }
 
-.nav-link:hover{
-  color: #fff;
-
+.text-center {
+  text-align: center!important;
 }
->>>>>>> bc74b8bb4a6e9be3a76ed66366dc50089a0733fd
+
+.section-content{
+  font-family: Bariol Regular;
+  font-size: 1.15rem;
+  line-height: 2.2;
+  word-spacing: 1px;
+}
+
+.mt-3{
+  margin-top: 1rem!important;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
