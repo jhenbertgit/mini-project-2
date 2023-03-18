@@ -5,7 +5,9 @@ import { getProvince, getCities, getMunicipalities } from "./api.js";
 let title = document.getElementById("title");
 let userLink = document.getElementById("user-link");
 let signoutLink = document.getElementById("signout-link");
-let header = document.getElementById("header-text");
+let fullName = document.getElementById("full-name");
+let lastLogin = document.getElementById("last-login");
+let lastLoginLabel = document.getElementById("last-login-label");
 let updateProfileForm = document.getElementById("update-profile");
 let userInfoTbl = document.getElementById("userInfo");
 
@@ -30,6 +32,14 @@ window.signOut = () => {
 };
 
 window.onload = () => {
+  const options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZoneName: "short",
+  };
   getUsername();
   if (currentUser == null) {
     userLink.innerText = "Create new account";
@@ -44,9 +54,16 @@ window.onload = () => {
   } else {
     title.innerText = `Blucare | ${currentUser.firstName} ${currentUser.lastName}`;
     userLink.innerText = currentUser.username;
-    header.innerText = `${currentUser.firstName} ${currentUser.lastName}`;
+    lastLoginLabel.innerText = "Last Logged-in: ";
+
+    lastLogin.innerText = new Date(
+      Date.parse(currentUser?.lastLoggedIn)
+    ).toLocaleDateString("en-US", options);
+    fullName.innerText = `${currentUser.firstName} ${currentUser.lastName}`;
+
     userInfoTbl.innerHTML = userInfo;
     updateProfileForm.innerHTML = updateProfile;
+
     userLink.classList.replace("nav-link", "btn");
     userLink.classList.remove("btn-success");
     userLink.href = "#";

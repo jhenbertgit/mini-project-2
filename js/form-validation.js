@@ -8,6 +8,7 @@ import {
   child,
 } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
 
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyD-PltqGp2GBwBmx4gs0gxye6ezOy3_YCA",
@@ -25,18 +26,18 @@ const app = initializeApp(firebaseConfig);
 // const auth = getAuth(app);
 const database = getDatabase(app);
 
-const username = document.getElementById("username");
-const firstName = document.getElementById("firstName");
-const lastName = document.getElementById("lastName");
-const email = document.getElementById("emailReg");
-const password = document.getElementById("passwordReg");
-
 //Validation
 const isEmpty = (str) => {
   return str === null || str.match(/^ *$/) !== null;
 };
 
 const validation = () => {
+  let username = document.getElementById("username");
+  let firstName = document.getElementById("firstName");
+  let lastName = document.getElementById("lastName");
+  let email = document.getElementById("emailReg");
+  let password = document.getElementById("passwordReg");
+
   //using regular expression
   let nameregex = /^[a-zA-Z]+$/;
   //standard email expression
@@ -72,23 +73,22 @@ const validation = () => {
   return true;
 };
 
-const registerUser = (e) => {
-  e.preventDefault();
+const registerUser = async (username, email, firstName, lastName, password) => {
   if (!validation()) {
     return;
   }
   const dbRef = ref(database);
-  get(child(dbRef, "users/" + username.value))
+  get(child(dbRef, "users/" + username))
     .then((snapshot) => {
       if (snapshot.exists()) {
         alert("User already exist");
       } else {
-        set(ref(database, "users/" + username.value), {
-          username: username.value,
-          email: email.value,
-          password: encryptPass(),
-          firstName: firstName.value,
-          lastName: lastName.value,
+        set(ref(database, "users/" + username), {
+          username: username,
+          email: email,
+          password: password,
+          firstName: firstName,
+          lastName: lastName,
         })
           .then(() => {
             alert("Registered Sucessfully");
@@ -103,27 +103,18 @@ const registerUser = (e) => {
       let errorMessage = error.message;
       alert(errorMessage);
     });
-  document.getElementById("signupForm").reset();
-  document.getElementById("username").focus();
-};
-//password encryption
-const encryptPass = () => {
-  let pass = CryptoJS.AES.encrypt(password.value, password.value);
-  return pass.toString();
 };
 
-const authUser = (e) => {
-  e.preventDefault();
+const authUser = async (username, password) => {
   const dbRef = ref(database);
-  let username = document.getElementById("usernameLogin");
-  let password = document.getElementById("passwordLogin");
-  get(child(dbRef, "users/" + username.value))
+  get(child(dbRef, "users/" + username))
     .then((snapshot) => {
       if (snapshot.exists()) {
         let dte = new Date();
-        let dbpass = decryptPass(snapshot.val().password);
-        if (dbpass == password.value) {
-          update(ref(database, "users/" + username.value), {
+        // let dbpass = decryptPass(snapshot.val().password);
+        let dbpass = snapshot.val().password;
+        if (dbpass == password) {
+          update(ref(database, "users/" + username), {
             lastLoggedIn: dte,
           });
           loggedIn(snapshot.val());
@@ -138,15 +129,6 @@ const authUser = (e) => {
       let errorMessage = error.message;
       alert(errorMessage);
     });
-  document.getElementById("loginForm").reset();
-  document.getElementById("usernameLogin").focus();
-};
-
-//decrypt password
-const decryptPass = (dbpass) => {
-  let password = document.getElementById("passwordLogin");
-  let pass = CryptoJS.AES.decrypt(dbpass, password.value);
-  return pass.toString(CryptoJS.enc.Utf8);
 };
 
 const loggedIn = (user) => {
@@ -177,7 +159,9 @@ const updateUserProfile = async (
       province,
     },
   }).then(() => {
-    alert("Profile successfully updated. Please re-login to view the updated data.\nThank you.");
+    alert(
+      "Profile successfully updated. Please re-login to view the updated data.\nThank you."
+    );
   });
 };
 
