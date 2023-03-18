@@ -1,7 +1,3 @@
-import { getProvince, getCities, getMunicipalities } from "./api.js";
-
-// getProvince().then((data) => console.log(data));
-
 const updateProfile = `<div class="card shadow">
 <div class="card-body">
   <h5 class="card-title">Update Profile</h5>
@@ -40,8 +36,6 @@ const updateProfile = `<div class="card shadow">
       />
       <datalist id="municipality">
         <option value="Tigbauan"></option>
-        <option value="Bansalan"></option>
-        <option value="Matanao"></option>
       </datalist>
       <label for="muniCity">Municipality/City</label>
     </div>
@@ -55,11 +49,7 @@ const updateProfile = `<div class="card shadow">
         placeholder="Province"
         list="provinces"
       />
-      <datalist id="provinces">
-        <option value="Iloilo"></option>
-        <option value="Davao Oriental"></option>
-        <option value="Davao del Sur"></option>
-      </datalist>
+      <datalist id="provinces"></datalist>
       <label for="prov">Province</label>
     </div>
 
@@ -78,11 +68,11 @@ const userInfo = `<table class="table table-borderless">
 <tbody>
   <tr>
     <td>Complete Address:</td>
-    <td>Brgy. Sampaloc, Panabo City, Davao del Norte</td>
+    <td id="address"></td>
   </tr>
   <tr>
     <td>Contact Number:</td>
-    <td>+639495623105</td>
+    <td id="contact"></td>
   </tr>
 </tbody>
 </table>`;

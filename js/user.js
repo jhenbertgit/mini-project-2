@@ -1,5 +1,6 @@
 import { updateProfile, userInfo } from "./user-dom.js";
 import { updateUserProfile } from "./form-validation.js";
+import { getProvince, getCities, getMunicipalities } from "./api.js";
 
 let title = document.getElementById("title");
 let userLink = document.getElementById("user-link");
@@ -50,12 +51,27 @@ window.onload = () => {
     userLink.classList.remove("btn-success");
     userLink.href = "#";
 
+    address.innerText = `${currentUser.address?.brgy}, ${currentUser.address?.muniCity}, ${currentUser.address?.province}`;
+    contact.innerText = currentUser?.contactNo;
+
     signoutLink.innerText = "Sign Out";
     signoutLink.classList.replace("nav-link", "btn");
     signoutLink.classList.remove("btn-success");
     signoutLink.href = "javascript:signOut()";
+
+    document.getElementById("updateBtn").addEventListener("click", update);
+
+    getProvince().then((responseData) => {
+      for (let provinceObj of responseData) {
+        const { name } = provinceObj;
+        const opt = document.createElement("option");
+        const text = document.createTextNode(name);
+        opt.appendChild(text);
+        opt.setAttribute("value", `${name}`);
+        document.getElementById("provinces").appendChild(opt);
+      }
+    });
   }
-  document.getElementById("updateBtn").addEventListener("click", update);
 };
 
 const update = (e) => {

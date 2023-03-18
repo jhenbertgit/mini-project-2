@@ -177,7 +177,7 @@ const updateUserProfile = async (
       province,
     },
   }).then(() => {
-    alert("Successfully update your profile. Thank you.");
+    alert("Profile successfully updated. Please re-login to view the updated data.\nThank you.");
   });
 };
 
