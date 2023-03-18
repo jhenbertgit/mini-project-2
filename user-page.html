@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title id="title">Blucare | Login</title>
     <!--BS CSS-->
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
     <!--custom CSS-->
@@ -46,78 +46,13 @@
         </nav>
       </header>
 
-      <div class="container">
+      <div class="container p-4">
         <div class="row">
-          <div class="col-12">
-            <h2 id="header-text" class="fw-bold text-center"></h2>
+          <div class="col-12 p-3">
+            <h5 id="header-text"></h5>
           </div>
-          <div id="userInfo" class="col-8 shadow rounded-1">
-            <table class="table table.table-borderless">
-              <tbody>
-                <tr>
-                  <td>Complete Address:</td>
-                  <td>Brgy. Sampaloc, Panabo City, Davao del Norte</td>
-                </tr>
-                <tr>
-                  <td>Contact Number:</td>
-                  <td>+639495623105</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div id="update-profile" class="col shadow rounded-1">
-            <form id="update-form">
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control rounded-3"
-                  id="address"
-                  placeholder="Address"
-                />
-                <label for="address">Address</label>
-              </div>
-
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control rounded-3"
-                  id="muni"
-                  placeholder="Municipality"
-                  list="municipality"
-                />
-                <datalist id="municipality">
-                  <option value="Tigbauan"></option>
-                  <option value="Bansalan"></option>
-                  <option value="Matanao"></option>
-                </datalist>
-                <label for="muni">Municipality</label>
-              </div>
-
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control rounded-3"
-                  id="prov"
-                  placeholder="Province"
-                  list="provinces"
-                />
-                <datalist id="provinces">
-                  <option value="Iloilo"></option>
-                  <option value="Davao Oriental"></option>
-                  <option value="Davao del Sur"></option>
-                </datalist>
-                <label for="prov">Province</label>
-              </div>
-
-              <button
-                id="update-profile-btn"
-                type="submit"
-                class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
-              >
-                Update Profile
-              </button>
-            </form>
-          </div>
+          <div id="userInfo" class="col-8 shadow rounded-3"></div>
+          <div id="update-profile" class="col"></div>
         </div>
       </div>
     </main>

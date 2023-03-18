@@ -31,9 +31,6 @@ const lastName = document.getElementById("lastName");
 const email = document.getElementById("emailReg");
 const password = document.getElementById("passwordReg");
 
-const login = document.getElementById("login");
-const register = document.getElementById("register");
-
 //Validation
 const isEmpty = (str) => {
   return str === null || str.match(/^ *$/) !== null;
@@ -114,7 +111,6 @@ const encryptPass = () => {
   let pass = CryptoJS.AES.encrypt(password.value, password.value);
   return pass.toString();
 };
-register.addEventListener("click", registerUser);
 
 const authUser = (e) => {
   e.preventDefault();
@@ -145,7 +141,6 @@ const authUser = (e) => {
   document.getElementById("loginForm").reset();
   document.getElementById("usernameLogin").focus();
 };
-login.addEventListener("click", authUser);
 
 //decrypt password
 const decryptPass = (dbpass) => {
@@ -166,3 +161,24 @@ const loggedIn = (user) => {
     window.location = "user-page.html";
   }
 };
+
+const updateUserProfile = async (
+  contactNo,
+  brgy,
+  muniCity,
+  province,
+  username
+) => {
+  update(ref(database, "users/" + username), {
+    contactNo,
+    address: {
+      brgy,
+      muniCity,
+      province,
+    },
+  }).then(() => {
+    alert("Successfully update your profile. Thank you.");
+  });
+};
+
+export { registerUser, authUser, updateUserProfile };
