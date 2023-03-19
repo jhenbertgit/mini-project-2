@@ -1,22 +1,21 @@
 import { registerUser, authUser } from "./js/form-validation.js";
 
-const username = document.getElementById("username");
-const firstName = document.getElementById("firstName");
-const lastName = document.getElementById("lastName");
-const email = document.getElementById("emailReg");
-// const password = document.getElementById("passwordReg");
-
-const usernameLogin = document.getElementById("usernameLogin");
-const passwordLogin = document.getElementById("passwordLogin");
-
-const regEvent = (e) => {
-  e.preventDefault();
+const regEvent = (event) => {
+  event.preventDefault();
+  let username = document.getElementById("username");
+  let firstName = document.getElementById("firstName");
+  let lastName = document.getElementById("lastName");
+  let email = document.getElementById("emailReg");
+  
   registerUser(username.value, email.value, firstName.value, lastName.value);
 };
 register.addEventListener("click", regEvent);
 
-const authEvent = (e) => {
-  e.preventDefault();
+const authEvent = (event) => {
+  event.preventDefault();
+  let usernameLogin = document.getElementById("usernameLogin");
+  let passwordLogin = document.getElementById("passwordLogin");
+  
   authUser(usernameLogin.value, passwordLogin.value);
 };
 login.addEventListener("click", authEvent);

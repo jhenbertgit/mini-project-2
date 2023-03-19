@@ -10,7 +10,7 @@
     <!--custom CSS-->
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="cover">
     <main>
       <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -33,10 +33,10 @@
             >
               <form class="d-flex">
                 <ul class="navbar-nav mr-auto">
-                  <li class="nav-item mx-1">
+                  <li class="nav-item m-2">
                     <a id="user-link" href="" class="nav-link"></a>
                   </li>
-                  <li class="nav-item mx-1">
+                  <li class="nav-item m-2">
                     <a id="signout-link" href="" class="nav-link"></a>
                   </li>
                 </ul>
@@ -45,18 +45,19 @@
           </div>
         </nav>
       </header>
-
       <div class="container p-4">
         <div class="row">
-          <div id="col" class="col-12 p-3">
+          <div id="col">
             <h5 id="full-name"></h5>
             <div class="d-flex gap-2">
               <p id="last-login-label" class="text-muted"></p>
               <p id="last-login" class="text-muted"></p>
             </div>
           </div>
-          <div id="userInfo" class="col-8 shadow rounded-3"></div>
-          <div id="update-profile" class="col shadow rounded-3"></div>
+          <div class="d-md-flex gap-2">
+            <div id="userInfo"></div>
+            <div id="update-profile"></div>
+          </div>
         </div>
       </div>
     </main>
