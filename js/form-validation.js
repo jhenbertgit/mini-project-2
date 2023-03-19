@@ -8,7 +8,6 @@ import {
   child,
 } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
 
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyD-PltqGp2GBwBmx4gs0gxye6ezOy3_YCA",
@@ -73,7 +72,7 @@ const validation = () => {
   return true;
 };
 
-const registerUser = async (username, email, firstName, lastName, password) => {
+const registerUser = async (username, email, firstName, lastName) => {
   if (!validation()) {
     return;
   }
@@ -86,7 +85,7 @@ const registerUser = async (username, email, firstName, lastName, password) => {
         set(ref(database, "users/" + username), {
           username: username,
           email: email,
-          password: password,
+          password: encryptPass(),
           firstName: firstName,
           lastName: lastName,
         })
@@ -111,8 +110,8 @@ const authUser = async (username, password) => {
     .then((snapshot) => {
       if (snapshot.exists()) {
         let dte = new Date();
-        // let dbpass = decryptPass(snapshot.val().password);
-        let dbpass = snapshot.val().password;
+        let dbpass = decryptPass(snapshot.val().password);
+        // let dbpass = snapshot.val().password;
         if (dbpass == password) {
           update(ref(database, "users/" + username), {
             lastLoggedIn: dte,
@@ -131,16 +130,31 @@ const authUser = async (username, password) => {
     });
 };
 
-const loggedIn = (user) => {
-  let keepLoogedIn = document.getElementById("stayLogin").checked;
+// password encryption
+const encryptPass = () => {
+  let password = document.getElementById("passwordReg");
+  let pass = CryptoJS.AES.encrypt(password.value, password.value);
+  return pass.toString();
+};
 
-  if (!keepLoogedIn) {
+// decrypt password
+const decryptPass = (dbpass) => {
+  let passwordLogin = document.getElementById("passwordLogin");
+  let pass = CryptoJS.AES.decrypt(dbpass, passwordLogin.value);
+  return pass.toString(CryptoJS.enc.Utf8);
+};
+
+const loggedIn = (user) => {
+  let keepLoggedIn = document.getElementById("stayLogin").checked;
+
+  if (!keepLoggedIn) {
     sessionStorage.setItem("user", JSON.stringify(user));
     window.location = "user-page.html";
   } else {
     localStorage.setItem("keepLoggedIn", "yes");
     localStorage.setItem("user", JSON.stringify(user));
     window.location = "user-page.html";
+    console.log("checked");
   }
 };
 

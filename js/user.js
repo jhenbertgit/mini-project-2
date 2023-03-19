@@ -1,6 +1,6 @@
 import { updateProfile, userInfo } from "./user-dom.js";
 import { updateUserProfile } from "./form-validation.js";
-import { getProvince, getCities, getMunicipalities } from "./api.js";
+import { getProvince, getMunicipalities } from "./api.js";
 
 let title = document.getElementById("title");
 let userLink = document.getElementById("user-link");
@@ -42,6 +42,7 @@ window.onload = () => {
   };
   getUsername();
   if (currentUser == null) {
+    document.body.setAttribute("class", "cover");
     userLink.innerText = "Create new account";
     userLink.classList.replace("nav-link", "btn");
     userLink.classList.add("btn-primary");
@@ -88,6 +89,17 @@ window.onload = () => {
         document.getElementById("provinces").appendChild(opt);
       }
     });
+
+    getMunicipalities().then((responseData) => {
+      for (let munObj of responseData) {
+        const { name } = munObj;
+        const opt = document.createElement("option");
+        const text = document.createTextNode(name);
+        opt.appendChild(text);
+        opt.setAttribute("value", `${name}`);
+        document.getElementById("municipalities").appendChild(opt);
+      }
+    });
   }
 };
 
@@ -95,7 +107,7 @@ const update = (e) => {
   e.preventDefault();
   let contactNo = document.getElementById("contact-no");
   let brgy = document.getElementById("brgy");
-  let muniCity = document.getElementById("muniCity");
+  let muniCity = document.getElementById("muni");
   let province = document.getElementById("prov");
 
   updateUserProfile(
