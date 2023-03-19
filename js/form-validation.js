@@ -25,21 +25,18 @@ const app = initializeApp(firebaseConfig);
 // const auth = getAuth(app);
 const database = getDatabase(app);
 
-const username = document.getElementById("username");
-const firstName = document.getElementById("firstName");
-const lastName = document.getElementById("lastName");
-const email = document.getElementById("emailReg");
-const password = document.getElementById("passwordReg");
-
-const login = document.getElementById("login");
-const register = document.getElementById("register");
-
 //Validation
-function isEmpty(str) {
+const isEmpty = (str) => {
   return str === null || str.match(/^ *$/) !== null;
-}
+};
 
-function validation() {
+const validation = () => {
+  let username = document.getElementById("username");
+  let firstName = document.getElementById("firstName");
+  let lastName = document.getElementById("lastName");
+  let email = document.getElementById("emailReg");
+  let password = document.getElementById("passwordReg");
+
   //using regular expression
   let nameregex = /^[a-zA-Z]+$/;
   //standard email expression
@@ -73,25 +70,24 @@ function validation() {
     return false;
   }
   return true;
-}
+};
 
-function registerUser(e) {
-  e.preventDefault();
+const registerUser = async (username, email, firstName, lastName) => {
   if (!validation()) {
     return;
   }
   const dbRef = ref(database);
-  get(child(dbRef, "users/" + username.value))
+  get(child(dbRef, "users/" + username))
     .then((snapshot) => {
       if (snapshot.exists()) {
         alert("User already exist");
       } else {
-        set(ref(database, "users/" + username.value), {
-          username: username.value,
-          email: email.value,
+        set(ref(database, "users/" + username), {
+          username: username,
+          email: email,
           password: encryptPass(),
-          firstName: firstName.value,
-          lastName: lastName.value,
+          firstName: firstName,
+          lastName: lastName,
         })
           .then(() => {
             alert("Registered Sucessfully");
@@ -106,27 +102,18 @@ function registerUser(e) {
       let errorMessage = error.message;
       alert(errorMessage);
     });
-  document.getElementById("signupForm").reset();
-}
-//password encryption
-function encryptPass() {
-  let pass = CryptoJS.AES.encrypt(password.value, password.value);
-  return pass.toString();
-}
-register.addEventListener("click", registerUser);
+};
 
-function authUser(e) {
-  e.preventDefault();
+const authUser = async (username, password) => {
   const dbRef = ref(database);
-  let username = document.getElementById("usernameLogin");
-  let password = document.getElementById("passwordLogin");
-  get(child(dbRef, "users/" + username.value))
+  get(child(dbRef, "users/" + username))
     .then((snapshot) => {
       if (snapshot.exists()) {
         let dte = new Date();
         let dbpass = decryptPass(snapshot.val().password);
-        if (dbpass == password.value) {
-          update(ref(database, "users/" + username.value), {
+        // let dbpass = snapshot.val().password;
+        if (dbpass == password) {
+          update(ref(database, "users/" + username), {
             lastLoggedIn: dte,
           });
           loggedIn(snapshot.val());
@@ -141,26 +128,55 @@ function authUser(e) {
       let errorMessage = error.message;
       alert(errorMessage);
     });
-  document.getElementById("loginForm").reset();
-}
-login.addEventListener("click", authUser);
+};
 
-//decrypt password
-function decryptPass(dbpass) {
-  let password = document.getElementById("passwordLogin");
-  let pass = CryptoJS.AES.decrypt(dbpass, password.value);
+// password encryption
+const encryptPass = () => {
+  let password = document.getElementById("passwordReg");
+  let pass = CryptoJS.AES.encrypt(password.value, password.value);
+  return pass.toString();
+};
+
+// decrypt password
+const decryptPass = (dbpass) => {
+  let passwordLogin = document.getElementById("passwordLogin");
+  let pass = CryptoJS.AES.decrypt(dbpass, passwordLogin.value);
   return pass.toString(CryptoJS.enc.Utf8);
-}
+};
 
-function loggedIn(user) {
-  let keepLoogedIn = document.getElementById("rememberMe").checked;
+const loggedIn = (user) => {
+  let keepLoggedIn = document.getElementById("stayLogin").checked;
 
-  if (!keepLoogedIn) {
+  if (!keepLoggedIn) {
     sessionStorage.setItem("user", JSON.stringify(user));
     window.location = "user-page.html";
   } else {
     localStorage.setItem("keepLoggedIn", "yes");
     localStorage.setItem("user", JSON.stringify(user));
     window.location = "user-page.html";
+    console.log("checked");
   }
-}
+};
+
+const updateUserProfile = async (
+  contactNo,
+  brgy,
+  muniCity,
+  province,
+  username
+) => {
+  update(ref(database, "users/" + username), {
+    contactNo,
+    address: {
+      brgy,
+      muniCity,
+      province,
+    },
+  }).then(() => {
+    alert(
+      "Profile successfully updated. Please re-login to view the updated data.\nThank you."
+    );
+  });
+};
+
+export { registerUser, authUser, updateUserProfile };
