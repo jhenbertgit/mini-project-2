@@ -26,18 +26,4 @@ const getMunicipalities = async () => {
   }
 };
 
-// const getUserInfo = async () => {
-//   try {
-//     const response = await fetch(
-//       "https://login-auth-37058-default-rtdb.asia-southeast1.firebasedatabase.app/users.json"
-//     );
-//     if (!response.ok) {
-//       throw new Error("Database is unreachable");
-//     }
-//     return await response.json();
-//   } catch (err) {
-//     alert(`${err.name}: ${err.message}`);
-//   }
-// };
-
 export { getProvince, getMunicipalities };

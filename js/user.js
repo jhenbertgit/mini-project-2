@@ -1,4 +1,4 @@
-import { updateProfile, userInfo } from "./user-dom.js";
+import { updateProfile, userInfo, div } from "./user-components.js";
 import { updateUserProfile } from "./form-validation.js";
 import { getProvince, getMunicipalities } from "./api.js";
 
@@ -75,6 +75,8 @@ window.onload = () => {
     fullName.innerText = `${currentUser.firstName} ${currentUser.lastName}`;
 
     userInfoTbl.innerHTML = userInfo;
+
+    userInfoTbl.insertAdjacentElement("beforeend", div);
     updateProfileForm.innerHTML = updateProfile;
 
     userLink.classList.replace("nav-link", "btn");
@@ -105,7 +107,7 @@ window.onload = () => {
       }
     });
 
-     /**list of Municipalities rendered in Municipalty input in the
+    /**list of Municipalities rendered in Municipalty input in the
      * update profile form
      */
     getMunicipalities().then((responseData) => {
