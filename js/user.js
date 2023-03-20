@@ -1,12 +1,17 @@
 import { updateProfile, userInfo } from "./user-dom.js";
 import { updateUserProfile } from "./form-validation.js";
+import { getProvince, getMunicipalities } from "./api.js";
 
 let title = document.getElementById("title");
 let userLink = document.getElementById("user-link");
 let signoutLink = document.getElementById("signout-link");
-let header = document.getElementById("header-text");
+let fullName = document.getElementById("full-name");
+let lastLogin = document.getElementById("last-login");
+let lastLoginLabel = document.getElementById("last-login-label");
 let updateProfileForm = document.getElementById("update-profile");
 let userInfoTbl = document.getElementById("userInfo");
+
+let column = document.getElementById("col");
 
 let currentUser = null;
 
@@ -29,8 +34,17 @@ window.signOut = () => {
 };
 
 window.onload = () => {
+  const options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZoneName: "short",
+  };
   getUsername();
   if (currentUser == null) {
+    document.body.setAttribute("class", "cover");
     userLink.innerText = "Create new account";
     userLink.classList.replace("nav-link", "btn");
     userLink.classList.add("btn-primary");
@@ -43,26 +57,75 @@ window.onload = () => {
   } else {
     title.innerText = `Blucare | ${currentUser.firstName} ${currentUser.lastName}`;
     userLink.innerText = currentUser.username;
-    header.innerText = `${currentUser.firstName} ${currentUser.lastName}`;
+    lastLoginLabel.innerText = "Last Logged-in: ";
+
+    column.setAttribute("class", "col-12 bg-body-tertiary rounded-3 p-3 my-2");
+    userInfoTbl.setAttribute(
+      "class",
+      "col-md-8 bg-body-tertiary shadow rounded-3 p-2 mb-2"
+    );
+    updateProfileForm.setAttribute(
+      "class",
+      "col bg-body-tertiary shadow rounded-3 p-2"
+    );
+
+    lastLogin.innerText = new Date(
+      Date.parse(currentUser?.lastLoggedIn)
+    ).toLocaleDateString("en-US", options);
+    fullName.innerText = `${currentUser.firstName} ${currentUser.lastName}`;
+
     userInfoTbl.innerHTML = userInfo;
     updateProfileForm.innerHTML = updateProfile;
+
     userLink.classList.replace("nav-link", "btn");
     userLink.classList.remove("btn-success");
     userLink.href = "#";
+
+    address.innerText = `${currentUser.address?.brgy}, ${currentUser.address?.muniCity}, ${currentUser.address?.province}`;
+    contact.innerText = currentUser?.contactNo;
 
     signoutLink.innerText = "Sign Out";
     signoutLink.classList.replace("nav-link", "btn");
     signoutLink.classList.remove("btn-success");
     signoutLink.href = "javascript:signOut()";
+
+    document.getElementById("updateBtn").addEventListener("click", update);
+
+    /**list of Provinces rendered in Province input in the
+     * update profile form
+     */
+    getProvince().then((responseData) => {
+      for (let provinceObj of responseData) {
+        const { name } = provinceObj;
+        const opt = document.createElement("option");
+        const text = document.createTextNode(name);
+        opt.appendChild(text);
+        opt.setAttribute("value", `${name}`);
+        document.getElementById("provinces").appendChild(opt);
+      }
+    });
+
+     /**list of Municipalities rendered in Municipalty input in the
+     * update profile form
+     */
+    getMunicipalities().then((responseData) => {
+      for (let munObj of responseData) {
+        const { name } = munObj;
+        const opt = document.createElement("option");
+        const text = document.createTextNode(name);
+        opt.appendChild(text);
+        opt.setAttribute("value", `${name}`);
+        document.getElementById("municipalities").appendChild(opt);
+      }
+    });
   }
-  document.getElementById("updateBtn").addEventListener("click", update);
 };
 
-const update = (e) => {
-  e.preventDefault();
+const update = (event) => {
+  event.preventDefault();
   let contactNo = document.getElementById("contact-no");
   let brgy = document.getElementById("brgy");
-  let muniCity = document.getElementById("muniCity");
+  let muniCity = document.getElementById("muni");
   let province = document.getElementById("prov");
 
   updateUserProfile(
