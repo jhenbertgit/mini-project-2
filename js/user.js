@@ -68,7 +68,6 @@ window.onload = () => {
       "class",
       "col bg-body-tertiary shadow rounded-3 p-2"
     );
-
     lastLogin.innerText = new Date(
       Date.parse(currentUser?.lastLoggedIn)
     ).toLocaleDateString("en-US", options);

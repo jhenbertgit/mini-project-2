@@ -173,16 +173,19 @@ p1_3.setAttribute("class", "card-text");
 p2_3.setAttribute("class", "card-text");
 span3.setAttribute("class", "badge text-bg-success");
 
-// const h6 = document.createElement("h6");
-// const text = document.createTextNode("Available Doctors");
-// h6.setAttribute("class", "fw-bold");
-// h6.appendChild(text);
-
 const div = document.createElement("div");
 div.setAttribute("class", "col d-flex justify-content-evenly");
 
 div.appendChild(card1);
 div.appendChild(card2);
 div.appendChild(card3);
+
+// const h6 = document.createElement("h6");
+// const text = document.createTextNode("Available Doctors");
+// h6.setAttribute("class", "fw-bold");
+// h6.appendChild(text);
+
+//form
+
 
 export { updateProfile, userInfo, div };
