@@ -1,4 +1,4 @@
-import { updateProfile, userInfo } from "./user-dom.js";
+import { updateProfile, userInfo, div } from "./user-components.js";
 import { updateUserProfile } from "./form-validation.js";
 import { getProvince, getMunicipalities } from "./api.js";
 
@@ -10,6 +10,8 @@ let lastLogin = document.getElementById("last-login");
 let lastLoginLabel = document.getElementById("last-login-label");
 let updateProfileForm = document.getElementById("update-profile");
 let userInfoTbl = document.getElementById("userInfo");
+
+let column = document.getElementById("col");
 
 let currentUser = null;
 
@@ -57,12 +59,24 @@ window.onload = () => {
     userLink.innerText = currentUser.username;
     lastLoginLabel.innerText = "Last Logged-in: ";
 
+    column.setAttribute("class", "col-12 bg-body-tertiary rounded-3 p-3 my-2");
+    userInfoTbl.setAttribute(
+      "class",
+      "col-md-8 bg-body-tertiary shadow rounded-3 p-2 mb-2"
+    );
+    updateProfileForm.setAttribute(
+      "class",
+      "col bg-body-tertiary shadow rounded-3 p-2"
+    );
+
     lastLogin.innerText = new Date(
       Date.parse(currentUser?.lastLoggedIn)
     ).toLocaleDateString("en-US", options);
     fullName.innerText = `${currentUser.firstName} ${currentUser.lastName}`;
 
     userInfoTbl.innerHTML = userInfo;
+
+    userInfoTbl.insertAdjacentElement("beforeend", div);
     updateProfileForm.innerHTML = updateProfile;
 
     userLink.classList.replace("nav-link", "btn");
@@ -79,6 +93,9 @@ window.onload = () => {
 
     document.getElementById("updateBtn").addEventListener("click", update);
 
+    /**list of Provinces rendered in Province input in the
+     * update profile form
+     */
     getProvince().then((responseData) => {
       for (let provinceObj of responseData) {
         const { name } = provinceObj;
@@ -90,6 +107,9 @@ window.onload = () => {
       }
     });
 
+    /**list of Municipalities rendered in Municipalty input in the
+     * update profile form
+     */
     getMunicipalities().then((responseData) => {
       for (let munObj of responseData) {
         const { name } = munObj;
@@ -103,8 +123,8 @@ window.onload = () => {
   }
 };
 
-const update = (e) => {
-  e.preventDefault();
+const update = (event) => {
+  event.preventDefault();
   let contactNo = document.getElementById("contact-no");
   let brgy = document.getElementById("brgy");
   let muniCity = document.getElementById("muni");

@@ -8,7 +8,7 @@ import {
   child,
 } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
 
-// Your web app's Firebase configuration
+// Web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyD-PltqGp2GBwBmx4gs0gxye6ezOy3_YCA",
   authDomain: "login-auth-37058.firebaseapp.com",
@@ -21,8 +21,8 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
 //Initialize Variables
-// const auth = getAuth(app);
 const database = getDatabase(app);
 
 //Validation
@@ -111,7 +111,6 @@ const authUser = async (username, password) => {
       if (snapshot.exists()) {
         let dte = new Date();
         let dbpass = decryptPass(snapshot.val().password);
-        // let dbpass = snapshot.val().password;
         if (dbpass == password) {
           update(ref(database, "users/" + username), {
             lastLoggedIn: dte,
@@ -144,6 +143,7 @@ const decryptPass = (dbpass) => {
   return pass.toString(CryptoJS.enc.Utf8);
 };
 
+//Stay logged in
 const loggedIn = (user) => {
   let keepLoggedIn = document.getElementById("stayLogin").checked;
 
