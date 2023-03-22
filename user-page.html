@@ -10,8 +10,8 @@
     <!--custom CSS-->
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="cover">
-    <main>
+  <body>
+    <main class="cover">
       <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-fluid px-5">
@@ -58,9 +58,11 @@
             <div id="userInfo"></div>
             <div id="update-profile"></div>
           </div>
+          <div id="user-form" class="col d-flex justify-content-center"></div>
         </div>
       </div>
     </main>
+
     <footer>
       <!--footer goes here-->
     </footer>
@@ -69,5 +71,12 @@
     <script src="./js/user.js" type="module"></script>
     <!--BS js-->
     <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!--cryptoJS for password encrypt/decrypt-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+      integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </body>
 </html>

@@ -173,11 +173,6 @@ p1_3.setAttribute("class", "card-text");
 p2_3.setAttribute("class", "card-text");
 span3.setAttribute("class", "badge text-bg-success");
 
-// const h6 = document.createElement("h6");
-// const text = document.createTextNode("Available Doctors");
-// h6.setAttribute("class", "fw-bold");
-// h6.appendChild(text);
-
 const div = document.createElement("div");
 div.setAttribute("class", "col d-flex justify-content-evenly");
 
@@ -185,4 +180,54 @@ div.appendChild(card1);
 div.appendChild(card2);
 div.appendChild(card3);
 
-export { updateProfile, userInfo, div };
+// const h6 = document.createElement("h6");
+// const text = document.createTextNode("Available Doctors");
+// h6.setAttribute("class", "fw-bold");
+// h6.appendChild(text);
+
+//form
+const loginForm = `<div class="col-sm-8 col-lg-4 bg-body-tertiary shadow rounded-3 p-3">
+<form id="loginForm">
+  <div class="d-flex justify-content-center">
+    <img
+      class="mb-4 img-fluid"
+      src="./assets/images/2.png"
+      alt="logo"
+      width="75"
+      height="75"
+    />
+  </div>
+  <h1 class="fw-bold mb-3 fs-2 text-black text-center">Log-in</h1>
+  <!-- <h1 class="h3 mb-3 fw-bold text-black">Please sign in</h1> -->
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control rounded-3"
+      id="usernameLogin"
+      placeholder="username"
+    />
+    <label for="usernameLogin">Username</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="password"
+      class="form-control rounded-3"
+      id="passwordLogin"
+      placeholder="Password"
+    />
+    <label for="passwordLogin">Password</label>
+  </div>
+  <div class="form-check checkbox mb-3">
+    <input
+      class="form-check-input me-1"
+      type="checkbox"
+      id="stayLogin"
+    /><label class="text-black" for="stayLogin">Stay Login</label>
+  </div>
+  <button id="login" type="submit" class="w-100 btn btn-lg btn-primary">
+    Login
+  </button>
+</form>
+</div>`;
+
+export { updateProfile, userInfo, div, loginForm };
