@@ -116,6 +116,18 @@ body {
   background-clip: border-box;
   border: 1px solid rgba(10, 68, 72, 0.125);
   border-radius: 0.6rem;
+  margin: auto;
+  margin-bottom: 2rem;
+  max-width: 314px;
+}
+
+.col-lg-4 {
+  flex: 0 0 33.3333333333%;
+  max-width: 33.3333333333%;
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .card-img-top {
@@ -173,7 +185,9 @@ body {
   font-size: 1.15rem;
   line-height: 2.2;
   word-spacing: 1px;
+  color: #0FB0BA;
 }
+
 
 .mt-3 {
   margin-top: 1rem !important;
@@ -186,6 +200,16 @@ p {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
+
+/* ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+} */
 
 .nav-link:hover {
   color: #fff;
