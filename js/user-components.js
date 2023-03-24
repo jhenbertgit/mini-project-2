@@ -186,7 +186,7 @@ div.appendChild(card3);
 // h6.appendChild(text);
 
 //form
-const loginForm = `<div class="col-sm-8 col-lg-4 bg-body-tertiary shadow rounded-3 p-3">
+const loginForm = `<div class="col-md-4 bg-body-tertiary shadow rounded-3 p-3">
 <form id="loginForm">
   <div class="d-flex justify-content-center">
     <img
