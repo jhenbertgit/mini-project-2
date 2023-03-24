@@ -1,6 +1,7 @@
-import { updateProfile, userInfo, div } from "./user-components.js";
+import { updateProfile, userInfo, div, loginForm } from "./user-components.js";
 import { updateUserProfile } from "./form-validation.js";
 import { getProvince, getMunicipalities } from "./api.js";
+import { authUser } from "./form-validation.js";
 
 let title = document.getElementById("title");
 let userLink = document.getElementById("user-link");
@@ -10,6 +11,7 @@ let lastLogin = document.getElementById("last-login");
 let lastLoginLabel = document.getElementById("last-login-label");
 let updateProfileForm = document.getElementById("update-profile");
 let userInfoTbl = document.getElementById("userInfo");
+let userForm = document.getElementById("user-form");
 
 let column = document.getElementById("col");
 
@@ -50,10 +52,14 @@ window.onload = () => {
     userLink.classList.add("btn-primary");
     userLink.href = "index.html";
 
-    signoutLink.innerText = "Login";
-    signoutLink.classList.replace("nav-link", "btn");
-    signoutLink.classList.add("btn-primary");
-    signoutLink.href = "index.html";
+    userForm.innerHTML = loginForm;
+
+    // signoutLink.innerText = "Login";
+    // signoutLink.classList.replace("nav-link", "btn");
+    // signoutLink.classList.add("btn-primary");
+    // signoutLink.href = "index.html";
+
+    document.getElementById("login").addEventListener("click", authEvent);
   } else {
     title.innerText = `Blucare | ${currentUser.firstName} ${currentUser.lastName}`;
     userLink.innerText = currentUser.username;
@@ -68,7 +74,6 @@ window.onload = () => {
       "class",
       "col bg-body-tertiary shadow rounded-3 p-2"
     );
-
     lastLogin.innerText = new Date(
       Date.parse(currentUser?.lastLoggedIn)
     ).toLocaleDateString("en-US", options);
@@ -140,4 +145,12 @@ const update = (event) => {
     document.getElementById("update-form").reset();
     document.getElementById("contact-no").focus();
   });
+};
+
+const authEvent = (event) => {
+  event.preventDefault();
+  let usernameLogin = document.getElementById("usernameLogin");
+  let passwordLogin = document.getElementById("passwordLogin");
+
+  authUser(usernameLogin.value, passwordLogin.value);
 };
