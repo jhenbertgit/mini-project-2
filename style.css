@@ -185,9 +185,8 @@ body {
   font-size: 1.15rem;
   line-height: 2.2;
   word-spacing: 1px;
-  color: #0FB0BA;
+  color: #0fb0ba;
 }
-
 
 .mt-3 {
   margin-top: 1rem !important;
@@ -213,4 +212,8 @@ p {
 
 .nav-link:hover {
   color: #fff;
+}
+
+.table-group-divider {
+  color: lightseagreen;
 }
