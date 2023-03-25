@@ -217,3 +217,13 @@ p {
 .table-group-divider {
   color: lightseagreen;
 }
+
+.card {
+  transform: scale(0.9);
+  transition: transform 300ms ease-in-out;
+}
+
+.card:hover,
+.card:focus {
+  transform: scale(1);
+}
