@@ -116,7 +116,16 @@ const authUser = async (username, password) => {
           update(ref(database, "users/" + username), {
             lastLoggedIn: dte,
           });
-          loggedIn(snapshot.val());
+          const userInfo = {
+            address: snapshot.val().address,
+            contactNo: snapshot.val().contactNo,
+            email: snapshot.val().email,
+            firstName: snapshot.val().firstName,
+            lastName: snapshot.val().lastName,
+            lastLoggedIn: snapshot.val().lastLoggedIn,
+            username: snapshot.val().username,
+          };
+          loggedIn(userInfo);
         } else {
           alert("username or password is invalid");
         }
@@ -144,8 +153,18 @@ const decryptPass = (dbpass) => {
   return pass.toString(CryptoJS.enc.Utf8);
 };
 
-//Stay logged in
-const loggedIn = (user) => {
+//check if user is logged in
+const loggedIn = (
+  user = {
+    address,
+    contactNo,
+    email,
+    firstName,
+    lastName,
+    lastLoggedIn,
+    username,
+  }
+) => {
   let keepLoggedIn = document.getElementById("stayLogin").checked;
 
   if (!keepLoggedIn) {
